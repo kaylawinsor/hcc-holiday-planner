@@ -1,31 +1,30 @@
-<!--
-HALF-CUP CALM — THE CALM MOM HOLIDAY PLANNER LANDING PAGE
 
-IMAGE URLS ARE ALREADY WIRED TO THE WORDPRESS MEDIA LIBRARY. BEFORE PUBLISHING, ONLY REPLACE:
-1) %%CHECKOUT_URL%% = Lemon Squeezy share URL containing /checkout/buy/
-2) assets/hcc-holiday-planner-hero.png = hcc-holiday-planner-hero.webp
-3) assets/hcc-holiday-planner-months.png = hcc-holiday-planner-three-month-plan.webp
-4) assets/hcc-holiday-planner-inside.png = hcc-holiday-planner-inside-pages.webp
-5) assets/hcc-holiday-planner-hosting.png = hcc-holiday-planner-hosting-logistics.webp
-
-The WebP files are included in the companion asset pack. Upload them to WordPress Media,
-copy each file URL, then replace only the matching placeholder in this HTML.
-
-WORDPRESS:
-- Use a Full Width / No Sidebar page template.
-- Paste this entire file into one Custom HTML block or WPBakery Raw HTML element.
-- If WordPress strips <script>, install/use the official Lemon Squeezy WordPress integration
-  or add the Lemon.js script in your site's header once. The buttons will still work as normal links.
--->
-
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Calm Mom Holiday Planner | Half-Cup Calm</title>
+  <meta name="description" content="A realistic 40-page printable holiday planning system for busy working moms. Organize gifts, work and school events, hosting, family celebrations and the December mental load in one place.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#f7f3ec">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The Calm Mom Holiday Planner">
+  <meta property="og:description" content="A realistic October–December holiday planning system for busy working moms.">
+  <meta property="og:image" content="https://hcc-holiday-planner.vercel.app/hcc-holiday-planner-product-mockup.png">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
 <div class="hcc-holiday-lp">
-<!-- IMPORTANT:
-Use the direct image file URLs from the WordPress Media Library (they should end in .webp or .png).
-Do not paste the attachment page URL. Missing images will create large blank boxes.
-Also use a Full Width / No Sidebar page template and disable the page title/breadcrumbs if your theme shows them.
--->
 
   <style>
+    html { scroll-behavior: smooth; }
+    html, body { margin: 0; padding: 0; width: 100%; min-height: 100%; }
+    body { background: #fffdf9; overflow-x: hidden; }
+    button, input, textarea, select { font: inherit; }
     .hcc-holiday-lp {
       --hcc-cream: #f7f3ec;
       --hcc-paper: #fffdf9;
@@ -50,6 +49,7 @@ Also use a Full Width / No Sidebar page template and disable the page title/brea
       position: relative;
       margin: 0;
       overflow: hidden;
+      min-height: 100vh;
       line-height: 1.6;
     }
 
@@ -340,7 +340,7 @@ Also use a Full Width / No Sidebar page template and disable the page title/brea
       </div>
 
       <div class="hcc-hero-visual">
-        <img class="hcc-hero-img" src="assets/hcc-holiday-planner-hero.png" alt="The Calm Mom Holiday Planner cover with actual printable planning pages" fetchpriority="high">
+        <img class="hcc-hero-img" src="/hcc-holiday-planner-hero.png" alt="The Calm Mom Holiday Planner cover with actual printable planning pages" fetchpriority="high">
         <div class="hcc-badge"><div><span>40</span>printable<br>pages</div></div>
         <div class="hcc-hero-caption">Actual planner pages shown.</div>
       </div>
@@ -427,21 +427,21 @@ Also use a Full Width / No Sidebar page template and disable the page title/brea
 
       <div class="hcc-preview-grid">
         <article class="hcc-preview-card">
-          <img src="assets/hcc-holiday-planner-months.png" alt="October November and December checklist pages from The Calm Mom Holiday Planner" loading="lazy">
+          <img src="/hcc-holiday-planner-months.png" alt="October November and December checklist pages from The Calm Mom Holiday Planner" loading="lazy">
           <div class="hcc-preview-body">
             <h3>October → December, mapped out</h3>
             <p>Three month-by-month checklists help you spread the work out instead of letting every gift, event and errand pile into the final two weeks.</p>
           </div>
         </article>
         <article class="hcc-preview-card">
-          <img src="assets/hcc-holiday-planner-inside.png" alt="Gift list grocery list delegate list and other printable pages from The Calm Mom Holiday Planner" loading="lazy">
+          <img src="/hcc-holiday-planner-inside.png" alt="Gift list grocery list delegate list and other printable pages from The Calm Mom Holiday Planner" loading="lazy">
           <div class="hcc-preview-body">
             <h3>The useful stuff, not filler</h3>
             <p>Gift tracking, shopping, groceries, delegation and practical worksheets designed to be printed, written on and actually used.</p>
           </div>
         </article>
         <article class="hcc-preview-card">
-          <img src="assets/hcc-holiday-planner-hosting.png" alt="Hosting household make-ahead food master commitments and delegate pages from The Calm Mom Holiday Planner" loading="lazy">
+          <img src="/hcc-holiday-planner-hosting.png" alt="Hosting household make-ahead food master commitments and delegate pages from The Calm Mom Holiday Planner" loading="lazy">
           <div class="hcc-preview-body">
             <h3>Hosting + holiday logistics</h3>
             <p>Plan food, household supplies, commitments and hand-offs so the invisible work stops bouncing between your calendar, texts and brain.</p>
@@ -452,15 +452,15 @@ Also use a Full Width / No Sidebar page template and disable the page title/brea
 
       <div class="hcc-extra-gallery" aria-label="Additional Holiday Planner previews">
         <figure>
-          <img src="assets/hcc-holiday-planner-product-mockup.png" alt="The Calm Mom Holiday Planner printable pages arranged in an organic holiday flat lay" loading="lazy">
+          <img src="/hcc-holiday-planner-product-mockup.png" alt="The Calm Mom Holiday Planner printable pages arranged in an organic holiday flat lay" loading="lazy">
           <figcaption>Designed to be useful, printable and easy to come back to all season.</figcaption>
         </figure>
         <figure>
-          <img src="assets/hcc-holiday-planner-gifts.png" alt="Additional pages from The Calm Mom Holiday Planner" loading="lazy">
+          <img src="/hcc-holiday-planner-gifts.png" alt="Additional pages from The Calm Mom Holiday Planner" loading="lazy">
           <figcaption>A cohesive 40-page system, without filler just to make the page count bigger.</figcaption>
         </figure>
         <figure>
-          <img src="assets/hcc-holiday-planner-inside.png" alt="Inside view of The Calm Mom Holiday Planner printable worksheets" loading="lazy">
+          <img src="/hcc-holiday-planner-inside.png" alt="Inside view of The Calm Mom Holiday Planner printable worksheets" loading="lazy">
           <figcaption>Print the entire planner or only the pages your family actually needs.</figcaption>
         </figure>
       </div>
@@ -569,3 +569,6 @@ Also use a Full Width / No Sidebar page template and disable the page title/brea
 
   <script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
 </div>
+
+</body>
+</html>
