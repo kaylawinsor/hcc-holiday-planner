@@ -1,0 +1,571 @@
+<!--
+HALF-CUP CALM — THE CALM MOM HOLIDAY PLANNER LANDING PAGE
+
+IMAGE URLS ARE ALREADY WIRED TO THE WORDPRESS MEDIA LIBRARY. BEFORE PUBLISHING, ONLY REPLACE:
+1) %%CHECKOUT_URL%% = Lemon Squeezy share URL containing /checkout/buy/
+2) assets/hcc-holiday-planner-hero.png = hcc-holiday-planner-hero.webp
+3) assets/hcc-holiday-planner-months.png = hcc-holiday-planner-three-month-plan.webp
+4) assets/hcc-holiday-planner-inside.png = hcc-holiday-planner-inside-pages.webp
+5) assets/hcc-holiday-planner-hosting.png = hcc-holiday-planner-hosting-logistics.webp
+
+The WebP files are included in the companion asset pack. Upload them to WordPress Media,
+copy each file URL, then replace only the matching placeholder in this HTML.
+
+WORDPRESS:
+- Use a Full Width / No Sidebar page template.
+- Paste this entire file into one Custom HTML block or WPBakery Raw HTML element.
+- If WordPress strips <script>, install/use the official Lemon Squeezy WordPress integration
+  or add the Lemon.js script in your site's header once. The buttons will still work as normal links.
+-->
+
+<div class="hcc-holiday-lp">
+<!-- IMPORTANT:
+Use the direct image file URLs from the WordPress Media Library (they should end in .webp or .png).
+Do not paste the attachment page URL. Missing images will create large blank boxes.
+Also use a Full Width / No Sidebar page template and disable the page title/breadcrumbs if your theme shows them.
+-->
+
+  <style>
+    .hcc-holiday-lp {
+      --hcc-cream: #f7f3ec;
+      --hcc-paper: #fffdf9;
+      --hcc-ink: #2d2a26;
+      --hcc-muted: #6f6a63;
+      --hcc-olive: #5f674f;
+      --hcc-olive-dark: #47503b;
+      --hcc-sage: #dfe4d8;
+      --hcc-sage-soft: #eef1e9;
+      --hcc-clay: #b56f52;
+      --hcc-clay-soft: #f1e3da;
+      --hcc-gold: #b48b56;
+      --hcc-line: #ddd6cb;
+      --hcc-shadow: 0 22px 55px rgba(68, 58, 46, .12);
+      --hcc-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+      --hcc-sans: "Open Sans", Arial, Helvetica, sans-serif;
+      color: var(--hcc-ink);
+      font-family: var(--hcc-sans);
+      background: var(--hcc-paper);
+      width: 100%;
+      max-width: 100%;
+      position: relative;
+      margin: 0;
+      overflow: hidden;
+      line-height: 1.6;
+    }
+
+    .hcc-holiday-lp *, .hcc-holiday-lp *::before, .hcc-holiday-lp *::after { box-sizing: border-box; }
+    .hcc-holiday-lp img { max-width: 100%; height: auto; display: block; }
+    .hcc-holiday-lp a { text-decoration: none; }
+    .hcc-holiday-lp p { margin: 0; }
+    .hcc-holiday-lp h1, .hcc-holiday-lp h2, .hcc-holiday-lp h3 { margin: 0; color: var(--hcc-ink); }
+
+    .hcc-wrap { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+    .hcc-narrow { width: min(820px, calc(100% - 40px)); margin: 0 auto; }
+
+    .hcc-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--hcc-olive-dark);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    .hcc-eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--hcc-gold);
+    }
+
+    .hcc-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 15px 25px;
+      border-radius: 999px;
+      background: var(--hcc-olive-dark);
+      color: #fff !important;
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: .01em;
+      box-shadow: 0 10px 24px rgba(71, 80, 59, .20);
+      transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+    }
+    .hcc-button:hover { background: #39422f; transform: translateY(-2px); box-shadow: 0 14px 30px rgba(71, 80, 59, .25); }
+    .hcc-button.hcc-button-light { background: var(--hcc-paper); color: var(--hcc-olive-dark) !important; box-shadow: none; border: 1px solid rgba(71,80,59,.15); }
+
+    /* HERO */
+    .hcc-hero {
+      position: relative;
+      background:
+        radial-gradient(circle at 10% 15%, rgba(181,111,82,.10), transparent 25%),
+        radial-gradient(circle at 90% 15%, rgba(95,103,79,.10), transparent 27%),
+        linear-gradient(180deg, #faf7f1 0%, #f7f3ec 100%);
+      padding: 74px 0 78px;
+      border-bottom: 1px solid rgba(95,103,79,.10);
+    }
+    .hcc-hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 54px;
+      background: linear-gradient(180deg, transparent, rgba(255,255,255,.35));
+      pointer-events: none;
+    }
+    .hcc-hero-grid { display: grid; grid-template-columns: 1.02fr .98fr; gap: 48px; align-items: center; }
+    .hcc-hero h1 {
+      font-family: var(--hcc-serif);
+      font-weight: 500;
+      font-size: clamp(52px, 6vw, 82px);
+      line-height: .98;
+      letter-spacing: -.035em;
+      margin: 18px 0 24px;
+      max-width: 690px;
+    }
+    .hcc-hero h1 .hcc-accent { color: var(--hcc-clay); font-style: italic; font-weight: 400; }
+    .hcc-hero-copy {
+      font-size: 19px;
+      line-height: 1.7;
+      color: #514c46;
+      max-width: 650px;
+    }
+    .hcc-hero-copy strong { color: var(--hcc-ink); }
+    .hcc-price-line { display: flex; flex-wrap: wrap; gap: 14px; align-items: baseline; margin: 26px 0 22px; }
+    .hcc-price { font-family: var(--hcc-serif); font-size: 42px; line-height: 1; }
+    .hcc-price-note { color: var(--hcc-clay); font-weight: 700; font-size: 14px; letter-spacing: .04em; text-transform: uppercase; }
+    .hcc-hero-actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+    .hcc-microcopy { font-size: 13px; color: var(--hcc-muted); }
+
+    .hcc-trust-row { display: flex; flex-wrap: wrap; gap: 9px 18px; margin-top: 25px; color: #605b55; font-size: 13px; font-weight: 600; }
+    .hcc-trust-item::before { content: "✓"; color: var(--hcc-olive); margin-right: 6px; font-weight: 800; }
+
+    .hcc-hero-visual { position: relative; }
+    .hcc-hero-img {
+      width: 100%;
+      min-height: 320px;
+      border-radius: 22px;
+      box-shadow: var(--hcc-shadow);
+      border: 1px solid rgba(95,103,79,.09);
+      background: #ece7df;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+    .hcc-badge {
+      position: absolute;
+      top: -18px;
+      right: -18px;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: var(--hcc-olive-dark);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 1.2;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      box-shadow: 0 14px 30px rgba(71,80,59,.24);
+      border: 5px solid var(--hcc-cream);
+    }
+    .hcc-badge span { display: block; font-family: var(--hcc-serif); font-size: 30px; letter-spacing: 0; line-height: 1; font-weight: 500; margin-bottom: 3px; }
+
+    /* SECTIONS */
+    .hcc-section { padding: 76px 0; }
+    .hcc-section-alt { background: var(--hcc-cream); }
+    .hcc-section-dark { background: var(--hcc-olive-dark); color: #fff; }
+    .hcc-section-dark h2, .hcc-section-dark h3 { color: #fff; }
+    .hcc-section-head { max-width: 780px; margin-bottom: 42px; }
+    .hcc-section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+    .hcc-section-head.center .hcc-eyebrow { justify-content: center; }
+    .hcc-section h2 {
+      font-family: var(--hcc-serif);
+      font-size: clamp(39px, 5vw, 58px);
+      font-weight: 500;
+      line-height: 1.08;
+      letter-spacing: -.025em;
+      margin: 12px 0 17px;
+    }
+    .hcc-section-sub { color: var(--hcc-muted); font-size: 18px; line-height: 1.75; }
+
+    /* PROBLEM */
+    .hcc-problem-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 64px; align-items: center; }
+    .hcc-quote-card {
+      padding: 40px;
+      border-radius: 24px;
+      background: var(--hcc-paper);
+      border: 1px solid var(--hcc-line);
+      box-shadow: 0 14px 36px rgba(68,58,46,.06);
+    }
+    .hcc-quote-card p:first-child { font-family: var(--hcc-serif); font-size: 32px; line-height: 1.25; }
+    .hcc-quote-card p + p { margin-top: 17px; color: var(--hcc-muted); }
+    .hcc-chaos-list { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 11px; }
+    .hcc-chaos-pill { background: #fff; border: 1px solid var(--hcc-line); border-radius: 999px; padding: 12px 16px; font-size: 14px; color: #4f4a44; }
+    .hcc-chaos-pill::before { content: "•"; color: var(--hcc-clay); margin-right: 8px; font-weight: 900; }
+
+    /* FEATURE CARDS */
+    .hcc-card-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; }
+    .hcc-card { background: #fff; border: 1px solid var(--hcc-line); border-radius: 20px; padding: 27px; }
+    .hcc-card-kicker { color: var(--hcc-clay); font-weight: 700; text-transform: uppercase; letter-spacing: .12em; font-size: 11px; }
+    .hcc-card h3 { font-family: var(--hcc-serif); font-size: 27px; line-height: 1.15; margin: 8px 0 10px; font-weight: 500; }
+    .hcc-card p { color: var(--hcc-muted); font-size: 14.5px; line-height: 1.65; }
+
+    /* PREVIEWS */
+    .hcc-preview-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 30px; align-items: start; }
+    .hcc-preview-card { background: transparent; border: 0; border-radius: 0; overflow: visible; box-shadow: none; }
+    .hcc-preview-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 18px; background: #eee9e1; box-shadow: 0 14px 34px rgba(68,58,46,.10); border: 1px solid rgba(95,103,79,.08); min-height: 220px; }
+    .hcc-preview-body { padding: 18px 4px 0; }
+    .hcc-preview-body h3 { font-family: var(--hcc-serif); font-size: 25px; font-weight: 500; margin-bottom: 6px; line-height: 1.2; }
+    .hcc-preview-body p { color: var(--hcc-muted); font-size: 14.5px; line-height: 1.65; }
+    .hcc-preview-note { margin-top: 16px; color: var(--hcc-muted); font-size: 12px; font-style: italic; }
+    .hcc-hero-caption { margin-top: 10px; text-align: center; color: var(--hcc-muted); font-size: 12px; }
+
+    /* SECONDARY PRODUCT GALLERY */
+    .hcc-extra-gallery { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; margin-top: 34px; }
+    .hcc-extra-gallery figure { margin: 0; }
+    .hcc-extra-gallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 16px; border: 1px solid rgba(95,103,79,.08); box-shadow: 0 12px 28px rgba(68,58,46,.08); background: #eee9e1; }
+    .hcc-extra-gallery figcaption { margin-top: 8px; color: var(--hcc-muted); font-size: 12px; text-align: center; }
+
+    /* REAL-MOM SECTION */
+    .hcc-real-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 54px; align-items: center; }
+    .hcc-real-copy { font-size: 18px; line-height: 1.8; color: rgba(255,255,255,.83); }
+    .hcc-real-copy p + p { margin-top: 18px; }
+    .hcc-real-highlight { margin-top: 28px; padding: 22px 24px; border: 1px solid rgba(255,255,255,.18); border-radius: 18px; background: rgba(255,255,255,.07); color: #fff; font-family: var(--hcc-serif); font-size: 24px; line-height: 1.4; }
+    .hcc-not-list { display: grid; gap: 12px; }
+    .hcc-not-item { display: flex; gap: 12px; align-items: flex-start; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,.12); }
+    .hcc-not-item:last-child { border-bottom: 0; }
+    .hcc-not-x { color: #e6b196; font-weight: 800; }
+
+    /* HOW */
+    .hcc-steps { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 22px; }
+    .hcc-step { position: relative; padding: 30px; background: #fff; border: 1px solid var(--hcc-line); border-radius: 20px; }
+    .hcc-step-num { font-family: var(--hcc-serif); font-size: 50px; line-height: 1; color: var(--hcc-sage); position: absolute; right: 22px; top: 17px; }
+    .hcc-step h3 { font-family: var(--hcc-serif); font-size: 26px; font-weight: 500; margin-bottom: 9px; }
+    .hcc-step p { color: var(--hcc-muted); font-size: 14.5px; }
+
+    /* FAQ */
+    .hcc-faq { max-width: 850px; margin: 0 auto; display: grid; gap: 12px; }
+    .hcc-faq details { background: #fff; border: 1px solid var(--hcc-line); border-radius: 16px; overflow: hidden; }
+    .hcc-faq summary { cursor: pointer; list-style: none; font-weight: 700; padding: 19px 52px 19px 20px; position: relative; }
+    .hcc-faq summary::-webkit-details-marker { display: none; }
+    .hcc-faq summary::after { content: "+"; position: absolute; right: 20px; top: 14px; color: var(--hcc-olive); font-size: 26px; font-weight: 400; }
+    .hcc-faq details[open] summary::after { content: "−"; }
+    .hcc-faq-answer { padding: 0 20px 20px; color: var(--hcc-muted); font-size: 15px; }
+
+    /* FINAL CTA */
+    .hcc-final-cta { background: linear-gradient(135deg, #ebe6dc 0%, #f7f3ec 52%, #e5e8df 100%); text-align: center; }
+    .hcc-final-card { max-width: 850px; margin: 0 auto; padding: 54px 38px; background: rgba(255,255,255,.72); border: 1px solid rgba(95,103,79,.13); border-radius: 28px; box-shadow: 0 18px 50px rgba(68,58,46,.08); }
+    .hcc-final-card h2 { margin-bottom: 14px; }
+    .hcc-final-card p { max-width: 620px; margin: 0 auto 24px; color: var(--hcc-muted); font-size: 17px; }
+    .hcc-final-price { font-family: var(--hcc-serif); font-size: 36px; margin-bottom: 20px; }
+    .hcc-legal { margin-top: 15px; font-size: 12px; color: var(--hcc-muted); }
+
+    /* MOBILE STICKY CTA */
+    .hcc-mobile-bar { display: none; }
+
+    @media (max-width: 900px) {
+      .hcc-hero { padding: 56px 0 66px; }
+      .hcc-hero-grid, .hcc-problem-grid, .hcc-real-grid { grid-template-columns: 1fr; }
+      .hcc-hero-grid { gap: 40px; }
+      .hcc-hero h1 { font-size: clamp(48px, 13vw, 68px); }
+      .hcc-badge { width: 92px; height: 92px; right: 10px; top: -12px; }
+      .hcc-card-grid, .hcc-steps { grid-template-columns: 1fr; }
+      .hcc-preview-grid { grid-template-columns: 1fr; }
+      .hcc-extra-gallery { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .hcc-wrap, .hcc-narrow { width: min(100% - 28px, 1160px); }
+      .hcc-section { padding: 64px 0; }
+      .hcc-hero { padding-top: 42px; }
+      .hcc-hero-copy { font-size: 17px; }
+      .hcc-hero-actions { align-items: stretch; }
+      .hcc-hero-actions .hcc-button { width: 100%; }
+      .hcc-price { font-size: 36px; }
+      .hcc-chaos-list { grid-template-columns: 1fr; }
+      .hcc-quote-card { padding: 28px; }
+      .hcc-quote-card p:first-child { font-size: 27px; }
+      .hcc-section h2 { font-size: 39px; }
+      .hcc-card, .hcc-step { padding: 23px; }
+      .hcc-final-card { padding: 38px 22px; }
+      .hcc-mobile-bar {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 12px;
+        align-items: center;
+        position: fixed;
+        z-index: 9997;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+        background: rgba(255,253,249,.96);
+        backdrop-filter: blur(12px);
+        border-top: 1px solid var(--hcc-line);
+        box-shadow: 0 -10px 25px rgba(68,58,46,.08);
+      }
+      .hcc-mobile-price { font-size: 12px; color: var(--hcc-muted); line-height: 1.2; }
+      .hcc-mobile-price strong { display: block; font-family: var(--hcc-serif); color: var(--hcc-ink); font-size: 22px; }
+      .hcc-mobile-bar .hcc-button { min-height: 44px; padding: 10px 18px; font-size: 14px; }
+    }
+  </style>
+
+  <section class="hcc-hero">
+    <div class="hcc-wrap hcc-hero-grid">
+      <div>
+        <div class="hcc-eyebrow">Printable holiday planning system for working moms</div>
+        <h1>The Calm Mom <span class="hcc-accent">Holiday Planner</span></h1>
+        <p class="hcc-hero-copy">
+          Gifts. Online orders. Work parties. School theme days. Teacher presents. Three different family Christmases. Hosting. Groceries. Stockings.
+          <strong>This is the place to get all of it out of your head.</strong>
+        </p>
+        <div class="hcc-price-line">
+          <div class="hcc-price">$9</div>
+          <div class="hcc-price-note">Launch price</div>
+        </div>
+        <div class="hcc-hero-actions">
+          <a class="hcc-button lemonsqueezy-button" href="%%CHECKOUT_URL%%">Get the Holiday Planner</a>
+          <span class="hcc-microcopy">Instant digital download</span>
+        </div>
+        <div class="hcc-trust-row">
+          <span class="hcc-trust-item">40 printable pages</span>
+          <span class="hcc-trust-item">US Letter 8.5 × 11</span>
+          <span class="hcc-trust-item">Print only what you need</span>
+        </div>
+      </div>
+
+      <div class="hcc-hero-visual">
+        <img class="hcc-hero-img" src="assets/hcc-holiday-planner-hero.png" alt="The Calm Mom Holiday Planner cover with actual printable planning pages" fetchpriority="high">
+        <div class="hcc-badge"><div><span>40</span>printable<br>pages</div></div>
+        <div class="hcc-hero-caption">Actual planner pages shown.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hcc-section hcc-section-alt">
+    <div class="hcc-wrap hcc-problem-grid">
+      <div class="hcc-quote-card">
+        <p>Christmas isn't overwhelming because you forgot to make a gift list.</p>
+        <p>It's overwhelming because the entire season quietly becomes one enormous collection of tiny things everyone assumes Mom already remembered.</p>
+      </div>
+      <div>
+        <div class="hcc-eyebrow">The actual holiday mental load</div>
+        <h2>There is a lot more to remember than presents.</h2>
+        <div class="hcc-chaos-list">
+          <div class="hcc-chaos-pill">Your work party</div>
+          <div class="hcc-chaos-pill">Your partner's work party</div>
+          <div class="hcc-chaos-pill">Pajama day</div>
+          <div class="hcc-chaos-pill">Daycare holiday party</div>
+          <div class="hcc-chaos-pill">Teacher gifts</div>
+          <div class="hcc-chaos-pill">Online orders</div>
+          <div class="hcc-chaos-pill">Family Christmas #1</div>
+          <div class="hcc-chaos-pill">Family Christmas #2</div>
+          <div class="hcc-chaos-pill">Family Christmas #3</div>
+          <div class="hcc-chaos-pill">What you're bringing where</div>
+          <div class="hcc-chaos-pill">Stocking stuffers</div>
+          <div class="hcc-chaos-pill">The groceries you forgot</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hcc-section">
+    <div class="hcc-wrap">
+      <div class="hcc-section-head center">
+        <div class="hcc-eyebrow">One place for all of it</div>
+        <h2>Built for the parts of Christmas that actually take up brain space.</h2>
+        <p class="hcc-section-sub">Not a decorative planner you'll fill out once and forget. These are the pages you'll reach for when you need to know what was ordered, where you're going, what you're bringing, and whether pajama day is somehow tomorrow.</p>
+      </div>
+
+      <div class="hcc-card-grid">
+        <article class="hcc-card">
+          <div class="hcc-card-kicker">Plan ahead</div>
+          <h3>October through December</h3>
+          <p>Month-by-month pacing, an at-a-glance calendar, brain dump, priorities, and realistic checklists so everything doesn't land in December.</p>
+        </article>
+        <article class="hcc-card">
+          <div class="hcc-card-kicker">Gifts + shopping</div>
+          <h3>Know what you bought — and where it went</h3>
+          <p>Master gift lists, kids' gift planning, stocking stuffers, three online-order trackers, budget planning, and the very necessary gift-hiding-spot tracker.</p>
+        </article>
+        <article class="hcc-card">
+          <div class="hcc-card-kicker">Work + school</div>
+          <h3>Because December has other plans</h3>
+          <p>Track work parties, your partner's events, school and daycare theme days, performances, kids' parties, teacher gifts, and childcare logistics.</p>
+        </article>
+        <article class="hcc-card">
+          <div class="hcc-card-kicker">Hosting</div>
+          <h3>Food, guests, groceries + the boring stuff</h3>
+          <p>Hosting plan, menu planner, grocery list, household supplies, make-ahead food, and a quick home reset that does not involve cleaning your baseboards.</p>
+        </article>
+        <article class="hcc-card">
+          <div class="hcc-card-kicker">Family logistics</div>
+          <h3>More than one Christmas? Same.</h3>
+          <p>Three full celebration planners, family gathering tracking, what-to-bring lists, kid logistics, travel notes, gifts, food, and timing.</p>
+        </article>
+        <article class="hcc-card">
+          <div class="hcc-card-kicker">Final countdown</div>
+          <h3>Finish the open loops, then stop</h3>
+          <p>Two weeks out, one week out, Christmas Eve, Christmas Day, the after-Christmas reset, and notes for making next year easier.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="hcc-section hcc-section-alt">
+    <div class="hcc-wrap">
+      <div class="hcc-section-head">
+        <div class="hcc-eyebrow">A peek inside</div>
+        <h2>Practical pages you'll actually use.</h2>
+        <p class="hcc-section-sub">A calm, printable system for the gifts, schedules, shopping, hosting and tiny holiday details that normally end up living in your head.</p>
+      </div>
+
+      <div class="hcc-preview-grid">
+        <article class="hcc-preview-card">
+          <img src="assets/hcc-holiday-planner-months.png" alt="October November and December checklist pages from The Calm Mom Holiday Planner" loading="lazy">
+          <div class="hcc-preview-body">
+            <h3>October → December, mapped out</h3>
+            <p>Three month-by-month checklists help you spread the work out instead of letting every gift, event and errand pile into the final two weeks.</p>
+          </div>
+        </article>
+        <article class="hcc-preview-card">
+          <img src="assets/hcc-holiday-planner-inside.png" alt="Gift list grocery list delegate list and other printable pages from The Calm Mom Holiday Planner" loading="lazy">
+          <div class="hcc-preview-body">
+            <h3>The useful stuff, not filler</h3>
+            <p>Gift tracking, shopping, groceries, delegation and practical worksheets designed to be printed, written on and actually used.</p>
+          </div>
+        </article>
+        <article class="hcc-preview-card">
+          <img src="assets/hcc-holiday-planner-hosting.png" alt="Hosting household make-ahead food master commitments and delegate pages from The Calm Mom Holiday Planner" loading="lazy">
+          <div class="hcc-preview-body">
+            <h3>Hosting + holiday logistics</h3>
+            <p>Plan food, household supplies, commitments and hand-offs so the invisible work stops bouncing between your calendar, texts and brain.</p>
+          </div>
+        </article>
+      </div>
+      <div class="hcc-preview-note">Product photography shows pages from the actual 40-page planner.</div>
+
+      <div class="hcc-extra-gallery" aria-label="Additional Holiday Planner previews">
+        <figure>
+          <img src="assets/hcc-holiday-planner-product-mockup.png" alt="The Calm Mom Holiday Planner printable pages arranged in an organic holiday flat lay" loading="lazy">
+          <figcaption>Designed to be useful, printable and easy to come back to all season.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/hcc-holiday-planner-gifts.png" alt="Additional pages from The Calm Mom Holiday Planner" loading="lazy">
+          <figcaption>A cohesive 40-page system, without filler just to make the page count bigger.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/hcc-holiday-planner-inside.png" alt="Inside view of The Calm Mom Holiday Planner printable worksheets" loading="lazy">
+          <figcaption>Print the entire planner or only the pages your family actually needs.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="hcc-section hcc-section-dark">
+    <div class="hcc-wrap hcc-real-grid">
+      <div>
+        <div class="hcc-eyebrow" style="color:#e7dccd;">Made for real moms</div>
+        <h2 style="margin-top:12px;">Not Pinterest Christmas moms.</h2>
+        <div class="hcc-real-copy">
+          <p>This planner will not tell you to make homemade ornaments in October, deep-clean your baseboards before guests arrive, or wake up at 5 a.m. to wrap presents in coordinating paper.</p>
+          <p>It will help you remember pajama day, where you hid the toy you bought six weeks ago, what you're bringing to your mother-in-law's house, and whether that Target package ever actually arrived.</p>
+        </div>
+        <div class="hcc-real-highlight">Calm doesn't mean doing everything. It means knowing what actually needs your attention.</div>
+      </div>
+      <div class="hcc-not-list">
+        <div class="hcc-not-item"><span class="hcc-not-x">×</span><span>No perfectionist morning routines.</span></div>
+        <div class="hcc-not-item"><span class="hcc-not-x">×</span><span>No twelve-page holiday decorating inventory.</span></div>
+        <div class="hcc-not-item"><span class="hcc-not-x">×</span><span>No guilt if you skip traditions that are more work than joy.</span></div>
+        <div class="hcc-not-item"><span class="hcc-not-x">×</span><span>No expectation that you print or use every single page.</span></div>
+        <div class="hcc-not-item"><span class="hcc-not-x">✓</span><span>Just one realistic system for getting the holiday mental load somewhere other than your brain.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hcc-section">
+    <div class="hcc-wrap">
+      <div class="hcc-section-head center">
+        <div class="hcc-eyebrow">Simple on purpose</div>
+        <h2>Here's how to use it.</h2>
+      </div>
+      <div class="hcc-steps">
+        <article class="hcc-step">
+          <span class="hcc-step-num">01</span>
+          <h3>Download</h3>
+          <p>Your planner is delivered digitally after purchase, so there is no shipping and nothing to wait for.</p>
+        </article>
+        <article class="hcc-step">
+          <span class="hcc-step-num">02</span>
+          <h3>Print what helps</h3>
+          <p>Print the whole planner or only the pages your family needs. Reprint trackers for your own household whenever you need more room.</p>
+        </article>
+        <article class="hcc-step">
+          <span class="hcc-step-num">03</span>
+          <h3>Get it out of your head</h3>
+          <p>Start with the brain dump and October checklist. You don't need to complete the planner in one sitting — that would defeat the point.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="hcc-section hcc-section-alt">
+    <div class="hcc-narrow">
+      <div class="hcc-section-head center">
+        <div class="hcc-eyebrow">Questions</div>
+        <h2>Before you buy.</h2>
+      </div>
+      <div class="hcc-faq">
+        <details>
+          <summary>Is this a physical planner?</summary>
+          <div class="hcc-faq-answer">No. This is a digital PDF download. Nothing will be mailed to you.</div>
+        </details>
+        <details>
+          <summary>Do I have to print all 40 pages?</summary>
+          <div class="hcc-faq-answer">Not at all. The whole point is to use what helps. Print the complete planner, or choose only the pages that fit your family and holiday plans.</div>
+        </details>
+        <details>
+          <summary>Can I print extra copies of certain pages?</summary>
+          <div class="hcc-faq-answer">Yes, for your own household. That is especially useful for extra gift lists, online-order trackers, kids' pages and additional holiday celebrations.</div>
+        </details>
+        <details>
+          <summary>What size is the planner?</summary>
+          <div class="hcc-faq-answer">The planner is designed for standard US Letter paper (8.5 × 11 inches).</div>
+        </details>
+        <details>
+          <summary>Is this designed only for moms who host Christmas?</summary>
+          <div class="hcc-faq-answer">No. Hosting is only one section. The planner also covers gifts, online shopping, work and school events, family gatherings, travel, multiple celebrations, teacher gifts and the December countdown.</div>
+        </details>
+        <details>
+          <summary>What happens after I buy?</summary>
+          <div class="hcc-faq-answer">You'll receive access to your digital download after checkout, along with a receipt by email.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="hcc-section hcc-final-cta">
+    <div class="hcc-wrap">
+      <div class="hcc-final-card">
+        <div class="hcc-eyebrow">A little less mental load</div>
+        <h2>Put Christmas somewhere other than your head.</h2>
+        <p>One realistic printable system for the gifts, logistics, school chaos, family plans and tiny holiday tasks you're already keeping track of.</p>
+        <div class="hcc-final-price">$9 launch price</div>
+        <a class="hcc-button lemonsqueezy-button" href="%%CHECKOUT_URL%%">Get The Calm Mom Holiday Planner</a>
+        <div class="hcc-legal">Digital PDF • 40 printable pages • Personal household use</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="hcc-mobile-bar">
+    <div class="hcc-mobile-price"><strong>$9</strong> launch price</div>
+    <a class="hcc-button lemonsqueezy-button" href="%%CHECKOUT_URL%%">Get the planner</a>
+  </div>
+
+  <script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
+</div>
