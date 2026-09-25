@@ -7,7 +7,9 @@
   <title>The Calm Mom Holiday Planner | Half-Cup Calm</title>
   <meta name="description" content="A realistic 40-page printable holiday planning system for busy working moms. Organize gifts, work and school events, hosting, family celebrations and the December mental load in one place.">
   <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#f7f3ec">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="https://www.halfcupcalm.com/wp-content/uploads/2025/11/cropped-cropped-ChatGPT-Image-Nov-6-2025-11_01_29-AM-32x32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="https://www.halfcupcalm.com/wp-content/uploads/2025/11/cropped-cropped-ChatGPT-Image-Nov-6-2025-11_01_29-AM-180x180.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -23,8 +25,7 @@
   <header class="hcc-site-header" aria-label="Half-Cup Calm site header">
     <div class="hcc-site-header-inner">
       <a class="hcc-site-brand" href="https://www.halfcupcalm.com/" aria-label="Half-Cup Calm home">
-        <span class="hcc-site-mark" aria-hidden="true">hcc</span>
-        <span class="hcc-site-name">half-cup calm</span>
+        <img class="hcc-site-logo" src="/hcc-logo.png" alt="half-cup calm logo" width="243" height="82">
       </a>
 
       <nav class="hcc-site-nav" aria-label="Main navigation">
@@ -53,27 +54,27 @@
   <style>
     html { scroll-behavior: smooth; }
     html, body { margin: 0; padding: 0; width: 100%; min-height: 100%; }
-    body { background: #fffdf9; overflow-x: hidden; }
+    body { background: #fff; overflow-x: hidden; }
     button, input, textarea, select { font: inherit; }
     .hcc-holiday-lp {
-      --hcc-cream: #f7f3ec;
-      --hcc-paper: #fffdf9;
-      --hcc-ink: #2d2a26;
-      --hcc-muted: #6f6a63;
-      --hcc-olive: #5f674f;
+      --hcc-white: #ffffff;
+      --hcc-cream: #faf7f2;
+      --hcc-sage-wash: #f1f4ed;
+      --hcc-ink: #2e2d2a;
+      --hcc-muted: #69645d;
+      --hcc-olive: #5f6b4a;
       --hcc-olive-dark: #47503b;
-      --hcc-sage: #dfe4d8;
-      --hcc-sage-soft: #eef1e9;
-      --hcc-clay: #b56f52;
-      --hcc-clay-soft: #f1e3da;
-      --hcc-gold: #b48b56;
-      --hcc-line: #ddd6cb;
-      --hcc-shadow: 0 22px 55px rgba(68, 58, 46, .12);
+      --hcc-sage: #dfe5d7;
+      --hcc-berry: #a64b3c;
+      --hcc-gold: #b8905a;
+      --hcc-gold-soft: #e9dcc6;
+      --hcc-line: #e6e0d6;
+      --hcc-shadow: 0 24px 60px rgba(60, 52, 40, .14);
       --hcc-serif: "Playfair Display", Georgia, "Times New Roman", serif;
       --hcc-sans: "Open Sans", Arial, Helvetica, sans-serif;
       color: var(--hcc-ink);
       font-family: var(--hcc-sans);
-      background: var(--hcc-paper);
+      background: var(--hcc-white);
       width: 100%;
       max-width: 100%;
       position: relative;
@@ -89,74 +90,46 @@
     .hcc-holiday-lp p { margin: 0; }
     .hcc-holiday-lp h1, .hcc-holiday-lp h2, .hcc-holiday-lp h3 { margin: 0; color: var(--hcc-ink); }
 
-    .hcc-wrap { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+    .hcc-wrap { width: min(1160px, calc(100% - 40px)); margin: 0 auto; position: relative; }
     .hcc-narrow { width: min(820px, calc(100% - 40px)); margin: 0 auto; }
 
+    /* Decorative sprigs, taken from the planner's own page art */
+    .hcc-deco { position: absolute; pointer-events: none; user-select: none; z-index: 0; }
 
-    /* HALF-CUP CALM SITE HEADER */
+    /* HALF-CUP CALM SITE HEADER (matches halfcupcalm.com) */
     .hcc-site-header {
       position: relative;
       z-index: 1000;
-      background: rgba(255,253,249,.97);
-      border-bottom: 1px solid rgba(95,103,79,.12);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: #fff;
+      border-bottom: 1px solid rgba(46,45,42,.06);
     }
     .hcc-site-header-inner {
-      width: min(1180px, calc(100% - 40px));
+      width: min(1240px, calc(100% - 40px));
       margin: 0 auto;
-      min-height: 72px;
+      min-height: 114px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 28px;
     }
-    .hcc-site-brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: #2d2a26 !important;
-      flex: 0 0 auto;
-    }
-    .hcc-site-mark {
-      width: 34px;
-      height: 34px;
-      border: 1px solid #d8d2c7;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: #f7f3ec;
-      color: #5f674f;
-      font-family: var(--hcc-serif);
-      font-size: 13px;
-      font-style: italic;
-      letter-spacing: -.02em;
-    }
-    .hcc-site-name {
-      font-family: var(--hcc-serif);
-      font-size: 17px;
-      line-height: 1;
-      letter-spacing: -.01em;
-      white-space: nowrap;
-    }
+    .hcc-site-brand { display: inline-flex; align-items: center; flex: 0 0 auto; }
+    .hcc-site-logo { width: 243px; height: auto; }
     .hcc-site-nav {
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      gap: clamp(16px, 2vw, 28px);
+      gap: 32px;
       flex-wrap: nowrap;
     }
     .hcc-site-nav a {
-      color: #423d37 !important;
-      font-size: 11.5px;
-      font-weight: 600;
+      color: #2e2d2a !important;
+      font-size: 16px;
+      font-weight: 400;
       line-height: 1;
-      letter-spacing: .035em;
-      text-transform: lowercase;
       white-space: nowrap;
       transition: color .18s ease;
     }
-    .hcc-site-nav a:hover { color: #b56f52 !important; }
+    .hcc-site-nav a:hover { color: #b7b0a3 !important; }
     .hcc-mobile-menu { display: none; position: relative; }
     .hcc-mobile-menu summary {
       list-style: none;
@@ -165,152 +138,167 @@
       height: 42px;
       display: grid;
       place-items: center;
-      border: 1px solid #ddd6cb;
-      border-radius: 50%;
-      background: #fffdf9;
     }
     .hcc-mobile-menu summary::-webkit-details-marker { display: none; }
     .hcc-hamburger,
     .hcc-hamburger::before,
     .hcc-hamburger::after {
-      width: 17px;
-      height: 1.5px;
-      background: #47503b;
+      width: 22px;
+      height: 2px;
+      background: #2e2d2a;
       display: block;
       content: '';
       position: relative;
+      border-radius: 2px;
     }
-    .hcc-hamburger::before { position: absolute; top: -5px; left: 0; }
-    .hcc-hamburger::after { position: absolute; top: 5px; left: 0; }
+    .hcc-hamburger::before { position: absolute; top: -7px; left: 0; }
+    .hcc-hamburger::after { position: absolute; top: 7px; left: 0; }
     .hcc-mobile-menu-panel {
       position: absolute;
-      top: 50px;
+      top: 52px;
       right: 0;
       width: min(290px, calc(100vw - 28px));
-      padding: 10px;
-      background: #fffdf9;
-      border: 1px solid #ddd6cb;
-      border-radius: 16px;
-      box-shadow: 0 18px 44px rgba(68,58,46,.14);
+      padding: 8px;
+      background: #fff;
+      border: 1px solid var(--hcc-line);
+      border-radius: 12px;
+      box-shadow: 0 18px 44px rgba(46,45,42,.12);
     }
     .hcc-mobile-menu-panel a {
       display: block;
-      color: #2d2a26 !important;
-      font-size: 14px;
-      font-weight: 600;
-      padding: 13px 14px;
-      border-radius: 10px;
+      color: #2e2d2a !important;
+      font-size: 16px;
+      padding: 12px 14px;
+      border-radius: 8px;
     }
-    .hcc-mobile-menu-panel a:hover { background: #f7f3ec; color: #b56f52 !important; }
+    .hcc-mobile-menu-panel a:hover { background: #f6f5f2; color: #8f887b !important; }
 
-    @media (max-width: 980px) {
+    @media (max-width: 1100px) {
       .hcc-site-nav { display: none; }
       .hcc-mobile-menu { display: block; }
-      .hcc-site-header-inner { min-height: 66px; }
+      .hcc-site-header-inner { min-height: 88px; }
+      .hcc-site-logo { width: 190px; }
     }
     @media (max-width: 600px) {
-      .hcc-site-header-inner { width: calc(100% - 28px); }
-      .hcc-site-name { font-size: 16px; }
-      .hcc-site-mark { width: 32px; height: 32px; }
+      .hcc-site-header-inner { width: calc(100% - 28px); min-height: 76px; }
+      .hcc-site-logo { width: 170px; }
     }
 
     .hcc-eyebrow {
+      position: relative;
+      z-index: 0;
       display: inline-flex;
       align-items: center;
-      gap: 9px;
+      padding: 3px 10px 2px 8px;
       color: var(--hcc-olive-dark);
-      font-size: 12px;
+      font-size: 14px;
       font-weight: 700;
       letter-spacing: .18em;
       text-transform: uppercase;
     }
+    /* Highlighter swipe: a slightly curved, uneven band with chisel-tip ends */
     .hcc-eyebrow::before {
       content: "";
-      width: 28px;
-      height: 1px;
-      background: var(--hcc-gold);
+      position: absolute;
+      z-index: -1;
+      left: -2px;
+      right: -4px;
+      top: 22%;
+      bottom: -6%;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 30' preserveAspectRatio='none'%3E%3Cpath d='M5 9C45 6.5 118 4.5 195 5.5L198 8.5C196.5 13 198.5 18 195.5 22.5C128 23.5 62 25.5 7 27.5L2.5 24.5C4.5 19.5 1.5 14 5 9Z' fill='%23f3d468'/%3E%3Cpath d='M9 11C60 9 130 8 192 8' stroke='%23e9c24f' stroke-width='1.2' fill='none' opacity='.5'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+      opacity: .62;
+      mix-blend-mode: multiply;
+      transform: rotate(-1.2deg);
+      border-radius: 2px;
     }
+    .hcc-section-dark .hcc-eyebrow::before { mix-blend-mode: normal; opacity: .3; }
+    .hcc-section:nth-of-type(even) .hcc-eyebrow::before { transform: rotate(.7deg) scaleY(-1); left: -5px; right: -1px; }
+    .hcc-section:nth-of-type(3n) .hcc-eyebrow::before { transform: rotate(-.4deg); top: 18%; }
 
     .hcc-button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 54px;
-      padding: 15px 25px;
+      min-height: 56px;
+      padding: 15px 26px;
       border-radius: 999px;
       background: var(--hcc-olive-dark);
       color: #fff !important;
       font-weight: 700;
       font-size: 16px;
       letter-spacing: .01em;
-      box-shadow: 0 10px 24px rgba(71, 80, 59, .20);
+      box-shadow: 0 10px 24px rgba(71, 80, 59, .22);
       transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
     }
-    .hcc-button:hover { background: #39422f; transform: translateY(-2px); box-shadow: 0 14px 30px rgba(71, 80, 59, .25); }
-    .hcc-button.hcc-button-light { background: var(--hcc-paper); color: var(--hcc-olive-dark) !important; box-shadow: none; border: 1px solid rgba(71,80,59,.15); }
+    .hcc-button:hover { background: #39422f; transform: translateY(-2px); box-shadow: 0 14px 30px rgba(71, 80, 59, .28); }
+    .hcc-button:has(.hcc-button-price) { padding: 8px 8px 8px 28px; }
+    .hcc-button-price {
+      margin-left: 18px;
+      padding: 9px 18px 11px;
+      border-radius: 999px;
+      background: #fff;
+      color: var(--hcc-olive-dark);
+      font-family: var(--hcc-serif);
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: -.01em;
+    }
 
     /* HERO */
     .hcc-hero {
       position: relative;
       background:
-        radial-gradient(circle at 10% 15%, rgba(181,111,82,.10), transparent 25%),
-        radial-gradient(circle at 90% 15%, rgba(95,103,79,.10), transparent 27%),
-        linear-gradient(180deg, #faf7f1 0%, #f7f3ec 100%);
-      padding: 74px 0 78px;
-      border-bottom: 1px solid rgba(95,103,79,.10);
+        radial-gradient(circle at 92% 8%, rgba(184,144,90,.13), transparent 30%),
+        radial-gradient(circle at 4% 96%, rgba(95,107,74,.09), transparent 28%),
+        #fff;
+      padding: 72px 0 84px;
     }
-    .hcc-hero::after {
-      content: "";
-      position: absolute;
-      inset: auto 0 0;
-      height: 54px;
-      background: linear-gradient(180deg, transparent, rgba(255,255,255,.35));
-      pointer-events: none;
-    }
-    .hcc-hero-grid { display: grid; grid-template-columns: 1.02fr .98fr; gap: 48px; align-items: center; }
+    .hcc-hero-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 56px; align-items: center; }
     .hcc-hero h1 {
       font-family: var(--hcc-serif);
       font-weight: 500;
       font-size: clamp(52px, 6vw, 82px);
       line-height: .98;
       letter-spacing: -.035em;
-      margin: 18px 0 24px;
+      margin: 0 0 24px;
       max-width: 690px;
     }
-    .hcc-hero h1 .hcc-accent { color: var(--hcc-clay); font-style: italic; font-weight: 400; }
+    .hcc-hero h1 .hcc-accent { color: var(--hcc-berry); font-style: italic; font-weight: 400; }
     .hcc-hero-copy {
       font-size: 19px;
       line-height: 1.7;
-      color: #514c46;
-      max-width: 650px;
+      color: #4f4a44;
+      max-width: 620px;
     }
     .hcc-hero-copy strong { color: var(--hcc-ink); }
-    .hcc-price-line { display: flex; flex-wrap: wrap; gap: 14px; align-items: baseline; margin: 26px 0 22px; }
-    .hcc-price { font-family: var(--hcc-serif); font-size: 42px; line-height: 1; }
-    .hcc-price-note { color: var(--hcc-clay); font-weight: 700; font-size: 14px; letter-spacing: .04em; text-transform: uppercase; }
-    .hcc-hero-actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
-    .hcc-microcopy { font-size: 13px; color: var(--hcc-muted); }
+    .hcc-hero-actions { display: flex; flex-wrap: wrap; gap: 12px 18px; align-items: center; margin-top: 32px; }
+    .hcc-microcopy { font-size: 13px; color: var(--hcc-muted); line-height: 1.45; }
+    .hcc-microcopy strong { display: block; color: var(--hcc-ink); font-weight: 600; }
 
-    .hcc-trust-row { display: flex; flex-wrap: wrap; gap: 9px 18px; margin-top: 25px; color: #605b55; font-size: 13px; font-weight: 600; }
-    .hcc-trust-item::before { content: "✓"; color: var(--hcc-olive); margin-right: 6px; font-weight: 800; }
+    .hcc-trust-row { display: flex; flex-wrap: wrap; gap: 9px 22px; margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--hcc-line); color: #5c5751; font-size: 13px; font-weight: 600; max-width: 560px; }
+    .hcc-trust-item { display: inline-flex; align-items: center; gap: 7px; }
+    .hcc-trust-item::before { content: "✦"; color: var(--hcc-gold); font-size: 11px; }
 
     .hcc-hero-visual { position: relative; }
     .hcc-hero-img {
+      position: relative;
+      z-index: 1;
       width: 100%;
-      min-height: 320px;
       border-radius: 22px;
       box-shadow: var(--hcc-shadow);
-      border: 1px solid rgba(95,103,79,.09);
       background: #ece7df;
       aspect-ratio: 4 / 3;
       object-fit: cover;
     }
+    .hcc-hero-visual .hcc-deco-a { width: 170px; left: -84px; bottom: -40px; opacity: .9; transform: rotate(-8deg); }
     .hcc-badge {
       position: absolute;
-      top: -18px;
-      right: -18px;
-      width: 110px;
-      height: 110px;
+      z-index: 2;
+      top: -20px;
+      right: -20px;
+      width: 112px;
+      height: 112px;
       border-radius: 50%;
       background: var(--hcc-olive-dark);
       color: #fff;
@@ -323,16 +311,17 @@
       letter-spacing: .08em;
       text-transform: uppercase;
       box-shadow: 0 14px 30px rgba(71,80,59,.24);
-      border: 5px solid var(--hcc-cream);
+      border: 5px solid #fff;
     }
     .hcc-badge span { display: block; font-family: var(--hcc-serif); font-size: 30px; letter-spacing: 0; line-height: 1; font-weight: 500; margin-bottom: 3px; }
 
     /* SECTIONS */
-    .hcc-section { padding: 76px 0; }
+    .hcc-section { padding: 84px 0; position: relative; }
     .hcc-section-alt { background: var(--hcc-cream); }
+    .hcc-section-sage { background: var(--hcc-sage-wash); }
     .hcc-section-dark { background: var(--hcc-olive-dark); color: #fff; }
     .hcc-section-dark h2, .hcc-section-dark h3 { color: #fff; }
-    .hcc-section-head { max-width: 780px; margin-bottom: 42px; }
+    .hcc-section-head { max-width: 780px; margin-bottom: 44px; position: relative; z-index: 1; }
     .hcc-section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
     .hcc-section-head.center .hcc-eyebrow { justify-content: center; }
     .hcc-section h2 {
@@ -345,58 +334,129 @@
     }
     .hcc-section-sub { color: var(--hcc-muted); font-size: 18px; line-height: 1.75; }
 
-    /* PROBLEM */
-    .hcc-problem-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 64px; align-items: center; }
-    .hcc-quote-card {
-      padding: 40px;
-      border-radius: 24px;
-      background: var(--hcc-paper);
-      border: 1px solid var(--hcc-line);
-      box-shadow: 0 14px 36px rgba(68,58,46,.06);
+    /* PROBLEM (festive) */
+    .hcc-section-festive {
+      background:
+        radial-gradient(circle at 8% 30%, rgba(166,75,60,.07), transparent 32%),
+        radial-gradient(circle at 94% 78%, rgba(184,144,90,.12), transparent 30%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cg fill='%23b8905a'%3E%3Cpath opacity='.32' transform='translate(34 42)' d='M0-6C1-1 1-1 6 0C1 1 1 1 0 6C-1 1-1 1-6 0C-1-1-1-1 0-6Z'/%3E%3Cpath opacity='.22' transform='translate(150 24) scale(.7)' d='M0-6C1-1 1-1 6 0C1 1 1 1 0 6C-1 1-1 1-6 0C-1-1-1-1 0-6Z'/%3E%3Cpath opacity='.26' transform='translate(118 130) scale(.9)' d='M0-6C1-1 1-1 6 0C1 1 1 1 0 6C-1 1-1 1-6 0C-1-1-1-1 0-6Z'/%3E%3Cpath opacity='.2' transform='translate(196 176) scale(.6)' d='M0-6C1-1 1-1 6 0C1 1 1 1 0 6C-1 1-1 1-6 0C-1-1-1-1 0-6Z'/%3E%3Ccircle cx='80' cy='92' r='1.4' opacity='.3'/%3E%3Ccircle cx='186' cy='96' r='1.2' opacity='.25'/%3E%3Ccircle cx='24' cy='170' r='1.3' opacity='.3'/%3E%3Ccircle cx='70' cy='206' r='1' opacity='.25'/%3E%3C/g%3E%3C/svg%3E") 0 0 / 220px 220px,
+        linear-gradient(180deg, #eef2e9 0%, #f4f6f0 100%);
     }
-    .hcc-quote-card p:first-child { font-family: var(--hcc-serif); font-size: 32px; line-height: 1.25; }
-    .hcc-quote-card p + p { margin-top: 17px; color: var(--hcc-muted); }
-    .hcc-chaos-list { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 11px; }
-    .hcc-chaos-pill { background: #fff; border: 1px solid var(--hcc-line); border-radius: 999px; padding: 12px 16px; font-size: 14px; color: #4f4a44; }
-    .hcc-chaos-pill::before { content: "•"; color: var(--hcc-clay); margin-right: 8px; font-weight: 900; }
+    .hcc-problem-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 72px; align-items: center; }
+    .hcc-quote-visual { position: relative; padding-bottom: 96px; }
+    .hcc-quote-photo {
+      width: 100%;
+      aspect-ratio: 4 / 4.4;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 22px;
+      box-shadow: var(--hcc-shadow);
+    }
+    .hcc-quote-card {
+      position: absolute;
+      left: -28px;
+      right: 36px;
+      bottom: 0;
+      z-index: 1;
+      padding: 50px 34px 30px;
+      border-radius: 20px;
+      background: #fff;
+      box-shadow: 0 22px 50px rgba(60,52,40,.14);
+      overflow: hidden;
+    }
+    .hcc-quote-card::before {
+      content: "\201C";
+      position: absolute;
+      top: 6px;
+      left: 28px;
+      font-family: var(--hcc-serif);
+      font-size: 72px;
+      line-height: 1;
+      color: var(--hcc-gold-soft);
+      z-index: -1;
+    }
+    .hcc-quote-card .hcc-deco { width: 92px; right: -14px; top: 6px; opacity: .75; transform: scaleX(-1); }
+    .hcc-quote-lead { font-family: var(--hcc-serif); font-size: 27px; line-height: 1.25; position: relative; padding-right: 40px; }
+    .hcc-quote-card .hcc-quote-lead + p { margin-top: 14px; color: var(--hcc-muted); font-size: 15.5px; line-height: 1.65; }
+
+    .hcc-load-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; margin-top: 30px; }
+    .hcc-load-group {
+      background: #fff;
+      border-radius: 18px;
+      padding: 22px 22px 20px;
+      box-shadow: 0 10px 30px rgba(60,52,40,.06);
+      border-top: 3px solid var(--hcc-sage);
+    }
+    .hcc-load-group { --tone: var(--hcc-olive); border-top-color: var(--tone); }
+    .hcc-load-group:nth-child(2) { --tone: var(--hcc-berry); }
+    .hcc-load-group:nth-child(3) { --tone: var(--hcc-gold); }
+    .hcc-load-group:nth-child(4) { --tone: var(--hcc-olive-dark); }
+    .hcc-load-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .hcc-load-icon {
+      width: 40px;
+      height: 40px;
+      flex: 0 0 40px;
+      border-radius: 50%;
+      background: var(--tone);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 6px 14px rgba(60,52,40,.14);
+    }
+    .hcc-load-icon svg { width: 20px; height: 20px; }
+    .hcc-load-head h3 { font-family: var(--hcc-serif); font-size: 20px; font-weight: 500; line-height: 1.2; }
+    .hcc-load-group ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; }
+    .hcc-load-group li { position: relative; padding-left: 20px; font-size: 15px; color: #4f4a44; line-height: 1.45; }
+    .hcc-load-group li::before { content: "✦"; position: absolute; left: 0; top: 1px; color: var(--tone); font-size: 11px; }
 
     /* FEATURE CARDS */
     .hcc-card-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; }
-    .hcc-card { background: #fff; border: 1px solid var(--hcc-line); border-radius: 20px; padding: 27px; }
-    .hcc-card-kicker { color: var(--hcc-clay); font-weight: 700; text-transform: uppercase; letter-spacing: .12em; font-size: 11px; }
+    .hcc-card { background: #fff; border: 1px solid var(--hcc-line); border-radius: 20px; padding: 28px; transition: transform .2s ease, box-shadow .2s ease; }
+    .hcc-card:hover { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(60,52,40,.08); }
+    .hcc-card-kicker { color: var(--hcc-berry); font-weight: 700; text-transform: uppercase; letter-spacing: .12em; font-size: 11px; }
     .hcc-card h3 { font-family: var(--hcc-serif); font-size: 27px; line-height: 1.15; margin: 8px 0 10px; font-weight: 500; }
     .hcc-card p { color: var(--hcc-muted); font-size: 14.5px; line-height: 1.65; }
 
     /* PREVIEWS */
     .hcc-preview-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 30px; align-items: start; }
-    .hcc-preview-card { background: transparent; border: 0; border-radius: 0; overflow: visible; box-shadow: none; }
-    .hcc-preview-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 18px; background: #eee9e1; box-shadow: 0 14px 34px rgba(68,58,46,.10); border: 1px solid rgba(95,103,79,.08); min-height: 220px; }
+    .hcc-preview-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 18px; background: #eee9e1; box-shadow: 0 14px 34px rgba(60,52,40,.12); min-height: 220px; }
     .hcc-preview-body { padding: 18px 4px 0; }
     .hcc-preview-body h3 { font-family: var(--hcc-serif); font-size: 25px; font-weight: 500; margin-bottom: 6px; line-height: 1.2; }
     .hcc-preview-body p { color: var(--hcc-muted); font-size: 14.5px; line-height: 1.65; }
-    .hcc-preview-note { margin-top: 16px; color: var(--hcc-muted); font-size: 12px; font-style: italic; }
-    .hcc-hero-caption { margin-top: 10px; text-align: center; color: var(--hcc-muted); font-size: 12px; }
+    .hcc-preview-note { margin-top: 18px; color: var(--hcc-muted); font-size: 12px; font-style: italic; }
+    .hcc-hero-caption { margin-top: 12px; text-align: center; color: var(--hcc-muted); font-size: 12px; position: relative; z-index: 1; }
 
-    /* SECONDARY PRODUCT GALLERY */
-    .hcc-extra-gallery { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; margin-top: 34px; }
-    .hcc-extra-gallery figure { margin: 0; }
-    .hcc-extra-gallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 16px; border: 1px solid rgba(95,103,79,.08); box-shadow: 0 12px 28px rgba(68,58,46,.08); background: #eee9e1; }
-    .hcc-extra-gallery figcaption { margin-top: 8px; color: var(--hcc-muted); font-size: 12px; text-align: center; }
+    /* SYSTEM FEATURE BAND */
+    .hcc-system { display: grid; grid-template-columns: 1.15fr .85fr; gap: 52px; align-items: center; margin-top: 64px; padding: 26px; background: #fff; border-radius: 26px; box-shadow: 0 18px 48px rgba(60,52,40,.08); }
+    .hcc-system img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 16px; }
+    .hcc-system h3 { font-family: var(--hcc-serif); font-size: 32px; font-weight: 500; line-height: 1.15; margin: 12px 0 20px; }
+    .hcc-check-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+    .hcc-check-list li { display: flex; gap: 12px; align-items: flex-start; color: #4f4a44; font-size: 15.5px; line-height: 1.55; }
+    .hcc-check-list li::before {
+      content: "";
+      flex: 0 0 22px;
+      height: 22px;
+      margin-top: 1px;
+      border-radius: 50%;
+      background: var(--hcc-olive) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center / 13px no-repeat;
+    }
 
     /* REAL-MOM SECTION */
-    .hcc-real-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 54px; align-items: center; }
-    .hcc-real-copy { font-size: 18px; line-height: 1.8; color: rgba(255,255,255,.83); }
+    .hcc-section-dark .hcc-deco { width: 220px; right: -30px; top: 28px; opacity: .22; filter: brightness(0) invert(1); }
+    .hcc-real-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 54px; align-items: center; position: relative; z-index: 1; }
+    .hcc-real-copy { font-size: 18px; line-height: 1.8; color: rgba(255,255,255,.85); }
     .hcc-real-copy p + p { margin-top: 18px; }
-    .hcc-real-highlight { margin-top: 28px; padding: 22px 24px; border: 1px solid rgba(255,255,255,.18); border-radius: 18px; background: rgba(255,255,255,.07); color: #fff; font-family: var(--hcc-serif); font-size: 24px; line-height: 1.4; }
+    .hcc-real-highlight { margin-top: 28px; padding: 22px 24px; border: 1px solid rgba(233,220,198,.35); border-radius: 18px; background: rgba(255,255,255,.07); color: #fff; font-family: var(--hcc-serif); font-size: 24px; line-height: 1.4; }
     .hcc-not-list { display: grid; gap: 12px; }
     .hcc-not-item { display: flex; gap: 12px; align-items: flex-start; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,.12); }
     .hcc-not-item:last-child { border-bottom: 0; }
     .hcc-not-x { color: #e6b196; font-weight: 800; }
+    .hcc-not-item:last-child .hcc-not-x { color: var(--hcc-gold-soft); }
 
     /* HOW */
     .hcc-steps { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 22px; }
     .hcc-step { position: relative; padding: 30px; background: #fff; border: 1px solid var(--hcc-line); border-radius: 20px; }
-    .hcc-step-num { font-family: var(--hcc-serif); font-size: 50px; line-height: 1; color: var(--hcc-sage); position: absolute; right: 22px; top: 17px; }
+    .hcc-step-num { font-family: var(--hcc-serif); font-size: 50px; line-height: 1; color: var(--hcc-gold-soft); position: absolute; right: 22px; top: 17px; }
     .hcc-step h3 { font-family: var(--hcc-serif); font-size: 26px; font-weight: 500; margin-bottom: 9px; }
     .hcc-step p { color: var(--hcc-muted); font-size: 14.5px; }
 
@@ -410,41 +470,52 @@
     .hcc-faq-answer { padding: 0 20px 20px; color: var(--hcc-muted); font-size: 15px; }
 
     /* FINAL CTA */
-    .hcc-final-cta { background: linear-gradient(135deg, #ebe6dc 0%, #f7f3ec 52%, #e5e8df 100%); text-align: center; }
-    .hcc-final-card { max-width: 850px; margin: 0 auto; padding: 54px 38px; background: rgba(255,255,255,.72); border: 1px solid rgba(95,103,79,.13); border-radius: 28px; box-shadow: 0 18px 50px rgba(68,58,46,.08); }
+    .hcc-final-cta { background: var(--hcc-sage-wash); text-align: center; }
+    .hcc-final-card { position: relative; max-width: 850px; margin: 0 auto; padding: 58px 38px 50px; background: #fff; border-radius: 28px; box-shadow: 0 18px 50px rgba(60,52,40,.08); overflow: hidden; }
+    .hcc-final-card > *:not(.hcc-deco) { position: relative; z-index: 1; }
+    .hcc-final-card .hcc-deco-a { width: 150px; left: -18px; top: -6px; opacity: .8; transform: scaleY(-1); }
+    .hcc-final-card .hcc-deco-b { width: 150px; right: -18px; bottom: -6px; opacity: .8; transform: scaleX(-1); }
     .hcc-final-card h2 { margin-bottom: 14px; }
-    .hcc-final-card p { max-width: 620px; margin: 0 auto 24px; color: var(--hcc-muted); font-size: 17px; }
-    .hcc-final-price { font-family: var(--hcc-serif); font-size: 36px; margin-bottom: 20px; }
-    .hcc-legal { margin-top: 15px; font-size: 12px; color: var(--hcc-muted); }
+    .hcc-final-card p { max-width: 620px; margin: 0 auto 28px; color: var(--hcc-muted); font-size: 17px; }
+    .hcc-legal { margin-top: 16px; font-size: 12px; color: var(--hcc-muted); }
 
     /* MOBILE STICKY CTA */
     .hcc-mobile-bar { display: none; }
 
     @media (max-width: 900px) {
-      .hcc-hero { padding: 56px 0 66px; }
-      .hcc-hero-grid, .hcc-problem-grid, .hcc-real-grid { grid-template-columns: 1fr; }
-      .hcc-hero-grid { gap: 40px; }
+      .hcc-hero { padding: 52px 0 70px; }
+      .hcc-hero-grid, .hcc-problem-grid, .hcc-real-grid, .hcc-system { grid-template-columns: 1fr; }
+      .hcc-hero-grid { gap: 48px; }
+      .hcc-problem-grid { gap: 48px; }
       .hcc-hero h1 { font-size: clamp(48px, 13vw, 68px); }
-      .hcc-badge { width: 92px; height: 92px; right: 10px; top: -12px; }
+      .hcc-badge { width: 92px; height: 92px; right: 10px; top: -14px; }
+      .hcc-badge span { font-size: 26px; }
+      .hcc-hero-visual .hcc-deco-a { left: -30px; width: 130px; }
+      .hcc-quote-visual { max-width: 560px; }
       .hcc-card-grid, .hcc-steps { grid-template-columns: 1fr; }
       .hcc-preview-grid { grid-template-columns: 1fr; }
-      .hcc-extra-gallery { grid-template-columns: 1fr; }
+      .hcc-system { gap: 28px; }
     }
 
     @media (max-width: 600px) {
       .hcc-wrap, .hcc-narrow { width: min(100% - 28px, 1160px); }
       .hcc-section { padding: 64px 0; }
-      .hcc-hero { padding-top: 42px; }
+      .hcc-hero { padding-top: 38px; }
       .hcc-hero-copy { font-size: 17px; }
-      .hcc-hero-actions { align-items: stretch; }
       .hcc-hero-actions .hcc-button { width: 100%; }
-      .hcc-price { font-size: 36px; }
-      .hcc-chaos-list { grid-template-columns: 1fr; }
-      .hcc-quote-card { padding: 28px; }
-      .hcc-quote-card p:first-child { font-size: 27px; }
+      .hcc-quote-visual { padding-bottom: 0; }
+      .hcc-quote-card { position: relative; left: auto; right: auto; margin: -64px 14px 0; padding: 44px 24px 24px; }
+      .hcc-quote-lead { font-size: 23px; }
+      .hcc-load-grid { grid-template-columns: 1fr; }
       .hcc-section h2 { font-size: 39px; }
       .hcc-card, .hcc-step { padding: 23px; }
-      .hcc-final-card { padding: 38px 22px; }
+      .hcc-system { padding: 16px 16px 26px; margin-top: 48px; }
+      .hcc-system > div { padding: 0 8px; }
+      .hcc-system h3 { font-size: 28px; }
+      .hcc-final-card { padding: 44px 22px 40px; }
+      .hcc-final-card .hcc-deco { width: 100px; }
+      .hcc-final-card .hcc-button { width: 100%; }
+      .hcc-holiday-lp { padding-bottom: 72px; }
       .hcc-mobile-bar {
         display: grid;
         grid-template-columns: 1fr auto;
@@ -456,33 +527,30 @@
         right: 0;
         bottom: 0;
         padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
-        background: rgba(255,253,249,.96);
+        background: rgba(255,255,255,.97);
         backdrop-filter: blur(12px);
         border-top: 1px solid var(--hcc-line);
-        box-shadow: 0 -10px 25px rgba(68,58,46,.08);
+        box-shadow: 0 -10px 25px rgba(60,52,40,.08);
       }
-      .hcc-mobile-price { font-size: 12px; color: var(--hcc-muted); line-height: 1.2; }
-      .hcc-mobile-price strong { display: block; font-family: var(--hcc-serif); color: var(--hcc-ink); font-size: 22px; }
-      .hcc-mobile-bar .hcc-button { min-height: 44px; padding: 10px 18px; font-size: 14px; }
+      .hcc-mobile-title { font-size: 12px; color: var(--hcc-muted); line-height: 1.3; }
+      .hcc-mobile-title strong { display: block; font-family: var(--hcc-serif); color: var(--hcc-ink); font-size: 17px; font-weight: 500; }
+      .hcc-mobile-bar .hcc-button { min-height: 46px; padding: 10px 18px; font-size: 14px; }
+      .hcc-mobile-bar .hcc-button { padding: 5px 5px 5px 18px; }
+      .hcc-mobile-bar .hcc-button-price { font-size: 20px; margin-left: 12px; padding: 6px 13px 8px; }
     }
   </style>
 
   <section class="hcc-hero">
     <div class="hcc-wrap hcc-hero-grid">
       <div>
-        <div class="hcc-eyebrow">Printable holiday planning system for working moms</div>
         <h1>The Calm Mom <span class="hcc-accent">Holiday Planner</span></h1>
         <p class="hcc-hero-copy">
           Gifts. Online orders. Work parties. School theme days. Teacher presents. Three different family Christmases. Hosting. Groceries. Stockings.
           <strong>This is the place to get all of it out of your head.</strong>
         </p>
-        <div class="hcc-price-line">
-          <div class="hcc-price">$9</div>
-          <div class="hcc-price-note">Launch price</div>
-        </div>
         <div class="hcc-hero-actions">
-          <a class="hcc-button lemonsqueezy-button" href="%%CHECKOUT_URL%%">Get the Holiday Planner</a>
-          <span class="hcc-microcopy">Instant digital download</span>
+          <a class="hcc-button lemonsqueezy-button" href="%%CHECKOUT_URL%%">Get the Holiday Planner<span class="hcc-button-price">$9</span></a>
+          <span class="hcc-microcopy"><strong>Instant digital download</strong>Print it again every season</span>
         </div>
         <div class="hcc-trust-row">
           <span class="hcc-trust-item">40 printable pages</span>
@@ -492,35 +560,72 @@
       </div>
 
       <div class="hcc-hero-visual">
-        <img class="hcc-hero-img" src="/hcc-holiday-planner-hero.png" alt="The Calm Mom Holiday Planner cover with actual printable planning pages" fetchpriority="high">
+        <img class="hcc-deco hcc-deco-a" src="/hcc-sprig.svg" alt="" aria-hidden="true">
+        <img class="hcc-hero-img" src="/hcc-holiday-planner-inside.png" alt="The Calm Mom Holiday Planner cover surrounded by printable planning pages" fetchpriority="high">
         <div class="hcc-badge"><div><span>40</span>printable<br>pages</div></div>
         <div class="hcc-hero-caption">Actual planner pages shown.</div>
       </div>
     </div>
   </section>
 
-  <section class="hcc-section hcc-section-alt">
+  <section class="hcc-section hcc-section-festive">
     <div class="hcc-wrap hcc-problem-grid">
-      <div class="hcc-quote-card">
-        <p>Christmas isn't overwhelming because you forgot to make a gift list.</p>
-        <p>It's overwhelming because the entire season quietly becomes one enormous collection of tiny things everyone assumes Mom already remembered.</p>
+      <div class="hcc-quote-visual">
+        <img class="hcc-quote-photo" src="/hcc-holiday-planner-hosting.png" alt="Master commitments, delegate it, make-ahead food, grocery and hosting pages from The Calm Mom Holiday Planner" loading="lazy">
+        <div class="hcc-quote-card">
+          <img class="hcc-deco" src="/hcc-sprig.svg" alt="" aria-hidden="true">
+          <p class="hcc-quote-lead">Christmas isn't overwhelming because you forgot to make a gift list.</p>
+          <p>It's overwhelming because the entire season quietly becomes one enormous collection of tiny things everyone assumes Mom already remembered.</p>
+        </div>
       </div>
       <div>
         <div class="hcc-eyebrow">The actual holiday mental load</div>
         <h2>There is a lot more to remember than presents.</h2>
-        <div class="hcc-chaos-list">
-          <div class="hcc-chaos-pill">Your work party</div>
-          <div class="hcc-chaos-pill">Your partner's work party</div>
-          <div class="hcc-chaos-pill">Pajama day</div>
-          <div class="hcc-chaos-pill">Daycare holiday party</div>
-          <div class="hcc-chaos-pill">Teacher gifts</div>
-          <div class="hcc-chaos-pill">Online orders</div>
-          <div class="hcc-chaos-pill">Family Christmas #1</div>
-          <div class="hcc-chaos-pill">Family Christmas #2</div>
-          <div class="hcc-chaos-pill">Family Christmas #3</div>
-          <div class="hcc-chaos-pill">What you're bringing where</div>
-          <div class="hcc-chaos-pill">Stocking stuffers</div>
-          <div class="hcc-chaos-pill">The groceries you forgot</div>
+        <div class="hcc-load-grid">
+          <div class="hcc-load-group">
+            <div class="hcc-load-head">
+              <span class="hcc-load-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></span>
+              <h3>At work</h3>
+            </div>
+            <ul>
+              <li>Your work party</li>
+              <li>Your partner's work party</li>
+            </ul>
+          </div>
+          <div class="hcc-load-group">
+            <div class="hcc-load-head">
+              <span class="hcc-load-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span>
+              <h3>School + daycare</h3>
+            </div>
+            <ul>
+              <li>Pajama day</li>
+              <li>Daycare holiday party</li>
+              <li>Teacher gifts</li>
+            </ul>
+          </div>
+          <div class="hcc-load-group">
+            <div class="hcc-load-head">
+              <span class="hcc-load-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg></span>
+              <h3>Family</h3>
+            </div>
+            <ul>
+              <li>Family Christmas #1</li>
+              <li>Family Christmas #2</li>
+              <li>Family Christmas #3</li>
+              <li>What you're bringing where</li>
+            </ul>
+          </div>
+          <div class="hcc-load-group">
+            <div class="hcc-load-head">
+              <span class="hcc-load-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M5 12v9h14v-9M12 8v13"/><path d="M12 8C10.5 5 7 4.5 7 6.75S10 8 12 8zm0 0c1.5-3 5-3.5 5-1.25S14 8 12 8z"/></svg></span>
+              <h3>Shopping</h3>
+            </div>
+            <ul>
+              <li>Online orders</li>
+              <li>Stocking stuffers</li>
+              <li>The groceries you forgot</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -569,7 +674,7 @@
     </div>
   </section>
 
-  <section class="hcc-section hcc-section-alt">
+  <section class="hcc-section hcc-section-sage">
     <div class="hcc-wrap">
       <div class="hcc-section-head">
         <div class="hcc-eyebrow">A peek inside</div>
@@ -586,43 +691,42 @@
           </div>
         </article>
         <article class="hcc-preview-card">
-          <img src="/hcc-holiday-planner-inside.png" alt="Gift list grocery list delegate list and other printable pages from The Calm Mom Holiday Planner" loading="lazy">
+          <img src="/hcc-holiday-planner-hero.png" alt="Gift list, grocery list, delegate list and hosting pages from The Calm Mom Holiday Planner" loading="lazy">
           <div class="hcc-preview-body">
             <h3>The useful stuff, not filler</h3>
             <p>Gift tracking, shopping, groceries, delegation and practical worksheets designed to be printed, written on and actually used.</p>
           </div>
         </article>
         <article class="hcc-preview-card">
-          <img src="/hcc-holiday-planner-hosting.png" alt="Hosting household make-ahead food master commitments and delegate pages from The Calm Mom Holiday Planner" loading="lazy">
+          <img src="/hcc-holiday-planner-gifts.png" alt="Master gift list and online orders tracker pages from The Calm Mom Holiday Planner" loading="lazy">
           <div class="hcc-preview-body">
-            <h3>Hosting + holiday logistics</h3>
-            <p>Plan food, household supplies, commitments and hand-offs so the invisible work stops bouncing between your calendar, texts and brain.</p>
+            <h3>Gifts + online orders</h3>
+            <p>A master gift list for everyone and online-order trackers, so you know what was bought, what shipped and whether it ever actually arrived.</p>
           </div>
         </article>
       </div>
       <div class="hcc-preview-note">Product photography shows pages from the actual 40-page planner.</div>
 
-      <div class="hcc-extra-gallery" aria-label="Additional Holiday Planner previews">
-        <figure>
-          <img src="/hcc-holiday-planner-product-mockup.png" alt="The Calm Mom Holiday Planner printable pages arranged in an organic holiday flat lay" loading="lazy">
-          <figcaption>Designed to be useful, printable and easy to come back to all season.</figcaption>
-        </figure>
-        <figure>
-          <img src="/hcc-holiday-planner-gifts.png" alt="Additional pages from The Calm Mom Holiday Planner" loading="lazy">
-          <figcaption>A cohesive 40-page system, without filler just to make the page count bigger.</figcaption>
-        </figure>
-        <figure>
-          <img src="/hcc-holiday-planner-inside.png" alt="Inside view of The Calm Mom Holiday Planner printable worksheets" loading="lazy">
-          <figcaption>Print the entire planner or only the pages your family actually needs.</figcaption>
-        </figure>
+      <div class="hcc-system">
+        <img src="/hcc-holiday-planner-product-mockup.png" alt="The Calm Mom Holiday Planner printable pages arranged in a holiday flat lay" loading="lazy">
+        <div>
+          <div class="hcc-eyebrow">The whole system</div>
+          <h3>One planner for the whole season, October through December.</h3>
+          <ul class="hcc-check-list">
+            <li>Designed to be useful, printable and easy to come back to all season.</li>
+            <li>Print the entire planner or only the pages your family actually needs.</li>
+            <li>Reprint trackers for your own household whenever you need more room.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="hcc-section hcc-section-dark">
+    <img class="hcc-deco" src="/hcc-sprig.svg" alt="" aria-hidden="true">
     <div class="hcc-wrap hcc-real-grid">
       <div>
-        <div class="hcc-eyebrow" style="color:#e7dccd;">Made for real moms</div>
+        <div class="hcc-eyebrow" style="color:#e9dcc6;">Made for real moms</div>
         <h2 style="margin-top:12px;">Not Pinterest Christmas moms.</h2>
         <div class="hcc-real-copy">
           <p>This planner will not tell you to make homemade ornaments in October, deep-clean your baseboards before guests arrive, or wake up at 5 a.m. to wrap presents in coordinating paper.</p>
@@ -704,19 +808,20 @@
   <section class="hcc-section hcc-final-cta">
     <div class="hcc-wrap">
       <div class="hcc-final-card">
+        <img class="hcc-deco hcc-deco-a" src="/hcc-sprig.svg" alt="" aria-hidden="true">
+        <img class="hcc-deco hcc-deco-b" src="/hcc-berry.svg" alt="" aria-hidden="true">
         <div class="hcc-eyebrow">A little less mental load</div>
         <h2>Put Christmas somewhere other than your head.</h2>
         <p>One realistic printable system for the gifts, logistics, school chaos, family plans and tiny holiday tasks you're already keeping track of.</p>
-        <div class="hcc-final-price">$9 launch price</div>
-        <a class="hcc-button lemonsqueezy-button" href="%%CHECKOUT_URL%%">Get The Calm Mom Holiday Planner</a>
+        <a class="hcc-button lemonsqueezy-button" href="%%CHECKOUT_URL%%">Get The Calm Mom Holiday Planner<span class="hcc-button-price">$9</span></a>
         <div class="hcc-legal">Digital PDF • 40 printable pages • Personal household use</div>
       </div>
     </div>
   </section>
 
   <div class="hcc-mobile-bar">
-    <div class="hcc-mobile-price"><strong>$9</strong> launch price</div>
-    <a class="hcc-button lemonsqueezy-button" href="%%CHECKOUT_URL%%">Get the planner</a>
+    <div class="hcc-mobile-title"><strong>The Holiday Planner</strong>Instant PDF download</div>
+    <a class="hcc-button lemonsqueezy-button" href="%%CHECKOUT_URL%%">Get it<span class="hcc-button-price">$9</span></a>
   </div>
 
   <script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
