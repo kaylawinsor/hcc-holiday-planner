@@ -37,7 +37,8 @@
         <a href="https://www.halfcupcalm.com/about/">about</a>
       </nav>
 
-      <details class="hcc-mobile-menu">
+      <div class="hcc-header-right">
+        <details class="hcc-mobile-menu">
         <summary aria-label="Open menu"><span class="hcc-hamburger" aria-hidden="true"></span></summary>
         <nav class="hcc-mobile-menu-panel" aria-label="Mobile navigation">
           <a href="https://www.halfcupcalm.com/category/work-life-balance/">work + life balance</a>
@@ -47,7 +48,9 @@
           <a href="https://www.halfcupcalm.com/category/shop-finds/">shop + finds</a>
           <a href="https://www.halfcupcalm.com/about/">about</a>
         </nav>
-      </details>
+        </details>
+        <a class="hcc-header-cta lemonsqueezy-button" href="%%CHECKOUT_URL%%">Get the Planner<span>$9</span></a>
+      </div>
     </div>
   </header>
 
@@ -110,16 +113,33 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 28px;
+      gap: 20px;
     }
+    .hcc-header-right { display: flex; align-items: center; gap: 14px; flex: 0 0 auto; }
+    .hcc-header-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 6px 6px 16px;
+      border-radius: 999px;
+      background: var(--hcc-olive-dark);
+      color: #fff !important;
+      font-size: 14px;
+      font-weight: 700;
+      white-space: nowrap;
+      transition: background .2s ease;
+    }
+    .hcc-header-cta:hover { background: #39422f; }
+    .hcc-header-cta span { background: #fff; color: var(--hcc-olive-dark); border-radius: 999px; padding: 4px 10px 5px; font-family: var(--hcc-serif); font-size: 17px; font-weight: 600; line-height: 1; }
     .hcc-site-brand { display: inline-flex; align-items: center; flex: 0 0 auto; }
     .hcc-site-logo { width: 243px; height: auto; }
     .hcc-site-nav {
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      gap: 32px;
+      gap: 24px;
       flex-wrap: nowrap;
+      margin-left: auto;
     }
     .hcc-site-nav a {
       color: #2e2d2a !important;
@@ -173,8 +193,14 @@
     }
     .hcc-mobile-menu-panel a:hover { background: #f6f5f2; color: #8f887b !important; }
 
-    @media (max-width: 1100px) {
+    @media (max-width: 1320px) {
       .hcc-site-nav { display: none; }
+      .hcc-mobile-menu { display: block; }
+    }
+    @media (max-width: 900px) {
+      .hcc-header-cta { display: none; }
+    }
+    @media (max-width: 1100px) {
       .hcc-mobile-menu { display: block; }
       .hcc-site-header-inner { min-height: 88px; }
       .hcc-site-logo { width: 190px; }
@@ -242,11 +268,11 @@
         #fff;
       padding: 72px 0 84px;
     }
-    .hcc-hero-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 56px; align-items: center; }
+    .hcc-hero-grid { display: grid; grid-template-columns: 1.06fr 1fr; gap: 56px; align-items: center; }
     .hcc-hero h1 {
       font-family: var(--hcc-serif);
       font-weight: 500;
-      font-size: clamp(52px, 6vw, 82px);
+      font-size: clamp(52px, 5.5vw, 78px);
       line-height: .98;
       letter-spacing: -.035em;
       margin: 0 0 24px;
@@ -264,6 +290,12 @@
     .hcc-microcopy { font-size: 13px; color: var(--hcc-muted); line-height: 1.45; }
     .hcc-microcopy strong { display: block; color: var(--hcc-ink); font-weight: 600; }
 
+    .hcc-hero .hcc-usp { font-family: var(--hcc-serif); font-style: italic; font-size: 23px; line-height: 1.4; color: var(--hcc-olive-dark); max-width: 560px; margin: -6px 0 18px; }
+    .hcc-includes { margin-top: 26px; padding: 18px 20px 18px; background: #fff; border: 1px solid var(--hcc-line); border-radius: 16px; max-width: 560px; box-shadow: 0 8px 24px rgba(60,52,40,.05); }
+    .hcc-includes-title { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--hcc-muted); margin-bottom: 12px; }
+    .hcc-check-list.hcc-includes-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px 16px; }
+    .hcc-includes-list li { font-size: 14.5px; line-height: 1.35; align-items: center; }
+    .hcc-includes-list li::before { flex-basis: 18px; height: 18px; background-size: 11px; margin-top: 0; }
     .hcc-trust-row { display: flex; flex-wrap: wrap; gap: 9px 22px; margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--hcc-line); color: #5c5751; font-size: 13px; font-weight: 600; max-width: 560px; }
     .hcc-trust-item { display: inline-flex; align-items: center; gap: 7px; }
     .hcc-trust-item::before { content: "✦"; color: var(--hcc-gold); font-size: 11px; }
@@ -276,8 +308,9 @@
       border-radius: 22px;
       box-shadow: var(--hcc-shadow);
       background: #ece7df;
-      aspect-ratio: 4 / 3;
+      aspect-ratio: 10 / 11;
       object-fit: cover;
+      object-position: 50% 45%;
     }
     .hcc-hero-visual .hcc-deco-a { width: 170px; left: -84px; bottom: -40px; opacity: .9; transform: rotate(-8deg); }
     .hcc-badge {
@@ -428,6 +461,11 @@
       background: var(--hcc-olive) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center / 13px no-repeat;
     }
 
+    /* MID-PAGE CTA */
+    .hcc-mid-cta { margin-top: 56px; text-align: center; }
+    .hcc-section .hcc-mid-cta h2 { font-size: clamp(30px, 3.4vw, 40px); margin: 0 0 10px; }
+    .hcc-mid-cta p { color: var(--hcc-muted); font-size: 15px; margin-bottom: 22px; }
+
     /* REAL-MOM SECTION */
     .hcc-section-dark .hcc-deco { width: 220px; right: -30px; top: 28px; opacity: .22; filter: brightness(0) invert(1); }
     .hcc-real-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 54px; align-items: center; position: relative; z-index: 1; }
@@ -438,7 +476,12 @@
     .hcc-not-item { display: flex; gap: 12px; align-items: flex-start; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,.12); }
     .hcc-not-item:last-child { border-bottom: 0; }
     .hcc-not-x { color: #e6b196; font-weight: 800; }
-    .hcc-not-item:last-child .hcc-not-x { color: var(--hcc-gold-soft); }
+    .hcc-not-item:nth-last-child(2) .hcc-not-x { color: var(--hcc-gold-soft); }
+    .hcc-not-item:nth-last-child(2) { border-bottom: 0; }
+    .hcc-founder { margin-top: 18px; padding: 24px 26px; background: #fff; color: var(--hcc-ink); border-radius: 18px; box-shadow: 0 18px 40px rgba(0,0,0,.18); }
+    .hcc-founder-title { font-family: var(--hcc-serif); font-size: 22px; margin-bottom: 8px; color: var(--hcc-ink); }
+    .hcc-founder p { color: var(--hcc-muted); font-size: 15px; line-height: 1.7; }
+    .hcc-founder-sign { margin-top: 12px; font-family: var(--hcc-serif); font-style: italic; font-size: 18px; color: var(--hcc-berry); }
 
     /* HOW */
     .hcc-steps { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 22px; }
@@ -469,6 +512,9 @@
     /* MOBILE STICKY CTA */
     .hcc-mobile-bar { display: none; }
 
+    @media (max-width: 1240px) {
+      .hcc-badge { right: -6px; }
+    }
     @media (max-width: 900px) {
       .hcc-hero { padding: 52px 0 70px; }
       .hcc-hero-grid, .hcc-problem-grid, .hcc-real-grid, .hcc-system { grid-template-columns: 1fr; }
@@ -476,6 +522,7 @@
       .hcc-problem-grid { gap: 48px; }
       .hcc-hero h1 { font-size: clamp(48px, 13vw, 68px); }
       .hcc-badge { width: 92px; height: 92px; right: 10px; top: -14px; }
+      .hcc-hero-img { aspect-ratio: 4 / 3; }
       .hcc-badge span { font-size: 26px; }
       .hcc-hero-visual .hcc-deco-a { left: -30px; width: 130px; }
       .hcc-quote-visual { max-width: 560px; }
@@ -494,6 +541,12 @@
       .hcc-trust-row { margin-top: 20px; padding-top: 16px; }
       .hcc-hero-grid { gap: 40px; }
       .hcc-eyebrow { font-size: 13px; letter-spacing: .13em; }
+      .hcc-hero .hcc-usp { font-size: 20px; margin: -4px 0 14px; }
+      .hcc-includes { padding: 16px; }
+      .hcc-includes-list li { font-size: 14.5px; }
+      .hcc-check-list.hcc-includes-list { grid-template-columns: 1fr; gap: 9px; }
+      .hcc-mid-cta .hcc-button { width: 100%; }
+      .hcc-founder { padding: 22px 20px; }
       .hcc-hero-actions .hcc-button { width: 100%; }
       .hcc-quote-visual { padding-bottom: 0; }
       .hcc-quote-card { position: relative; left: auto; right: auto; margin: -64px 14px 0; padding: 44px 24px 24px; }
@@ -528,7 +581,8 @@
       }
       .hcc-mobile-bar.is-visible { transform: none; }
       .hcc-mobile-title { font-size: 12px; color: var(--hcc-muted); line-height: 1.3; }
-      .hcc-mobile-title strong { display: block; font-family: var(--hcc-serif); color: var(--hcc-ink); font-size: 17px; font-weight: 500; }
+      .hcc-mobile-title { white-space: nowrap; min-width: 0; }
+      .hcc-mobile-title strong { display: block; font-family: var(--hcc-serif); color: var(--hcc-ink); font-size: 16px; font-weight: 500; }
       .hcc-mobile-bar .hcc-button { min-height: 46px; padding: 10px 18px; font-size: 14px; }
       .hcc-mobile-bar .hcc-button { padding: 5px 5px 5px 18px; }
       .hcc-mobile-bar .hcc-button-price { font-size: 20px; margin-left: 12px; padding: 6px 13px 8px; }
@@ -539,18 +593,22 @@
     <div class="hcc-wrap hcc-hero-grid">
       <div>
         <h1>The Calm Mom <span class="hcc-accent">Holiday Planner</span></h1>
-        <p class="hcc-hero-copy">
-          Gifts. Online orders. Work parties. School theme days. Teacher presents. Three different family Christmases. Hosting. Groceries. Stockings.
-          <strong>This is the place to get all of it out of your head.</strong>
-        </p>
+        <p class="hcc-usp">A holiday planner that helps you remember more — without giving you more to do.</p>
+        <p class="hcc-hero-copy">Gifts, school theme days, work parties, three family Christmases — <strong>finally out of your head and in one place.</strong></p>
         <div class="hcc-hero-actions">
           <a class="hcc-button lemonsqueezy-button" href="%%CHECKOUT_URL%%">Get the Holiday Planner<span class="hcc-button-price">$9</span></a>
-          <span class="hcc-microcopy"><strong>Instant digital download</strong>Print it again every season</span>
+          <span class="hcc-microcopy"><strong>One-time purchase</strong>No subscription</span>
         </div>
-        <div class="hcc-trust-row">
-          <span class="hcc-trust-item">40 printable pages</span>
-          <span class="hcc-trust-item">US Letter 8.5 × 11</span>
-          <span class="hcc-trust-item">Print only what you need</span>
+        <div class="hcc-includes">
+          <div class="hcc-includes-title">Your $9 download includes</div>
+          <ul class="hcc-check-list hcc-includes-list">
+            <li>40-page printable PDF</li>
+            <li>October–December system</li>
+            <li>US Letter 8.5 × 11</li>
+            <li>Print only what you need</li>
+            <li>Reprintable trackers</li>
+            <li>Instant digital access</li>
+          </ul>
         </div>
       </div>
 
@@ -714,6 +772,12 @@
           </ul>
         </div>
       </div>
+
+      <div class="hcc-mid-cta">
+        <h2>Ready to get Christmas out of your head?</h2>
+        <p>40 printable pages · Instant digital download · $9 one-time purchase</p>
+        <a class="hcc-button lemonsqueezy-button" href="%%CHECKOUT_URL%%">Get the Holiday Planner<span class="hcc-button-price">$9</span></a>
+      </div>
     </div>
   </section>
 
@@ -735,6 +799,11 @@
         <div class="hcc-not-item"><span class="hcc-not-x">×</span><span>No guilt if you skip traditions that are more work than joy.</span></div>
         <div class="hcc-not-item"><span class="hcc-not-x">×</span><span>No expectation that you print or use every single page.</span></div>
         <div class="hcc-not-item"><span class="hcc-not-x">✓</span><span>Just one realistic system for getting the holiday mental load somewhere other than your brain.</span></div>
+        <div class="hcc-founder">
+          <div class="hcc-founder-title">Why I made this</div>
+          <p>I'm a working mom with two little boys, multiple family Christmases, school and daycare events, work obligations, online orders, teacher gifts, and all the other holiday details that somehow end up in Mom's head. I wanted one place for the things I actually need to remember — not another planner giving me more things to do.</p>
+          <div class="hcc-founder-sign">— Kayla, Half-Cup Calm</div>
+        </div>
       </div>
     </div>
   </section>
@@ -809,20 +878,20 @@
         <h2>Put Christmas somewhere other than your head.</h2>
         <p>One realistic printable system for the gifts, logistics, school chaos, family plans and tiny holiday tasks you're already keeping track of.</p>
         <a class="hcc-button lemonsqueezy-button" href="%%CHECKOUT_URL%%">Get The Calm Mom Holiday Planner<span class="hcc-button-price">$9</span></a>
-        <div class="hcc-legal">Digital PDF • 40 printable pages • Personal household use</div>
+        <div class="hcc-legal">$9 one-time purchase • Instant PDF download • No subscription</div>
       </div>
     </div>
   </section>
 
   <div class="hcc-mobile-bar">
-    <div class="hcc-mobile-title"><strong>The Holiday Planner</strong>Instant PDF download</div>
-    <a class="hcc-button lemonsqueezy-button" href="%%CHECKOUT_URL%%">Get it<span class="hcc-button-price">$9</span></a>
+    <div class="hcc-mobile-title"><strong>Holiday Planner</strong>One-time purchase</div>
+    <a class="hcc-button lemonsqueezy-button" href="%%CHECKOUT_URL%%">Get the Planner<span class="hcc-button-price">$9</span></a>
   </div>
 
   <script>
     (function () {
       var bar = document.querySelector('.hcc-mobile-bar');
-      var ctas = document.querySelectorAll('.hcc-hero .hcc-button, .hcc-final-card .hcc-button');
+      var ctas = document.querySelectorAll('.hcc-hero .hcc-button, .hcc-mid-cta .hcc-button, .hcc-final-card .hcc-button');
       if (!bar || !('IntersectionObserver' in window)) { if (bar) bar.classList.add('is-visible'); return; }
       var seen = new Set();
       var io = new IntersectionObserver(function (entries) {
