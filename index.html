@@ -18,6 +18,14 @@
   <meta property="og:description" content="A realistic October–December holiday planning system for busy working moms.">
   <meta property="og:image" content="https://hcc-holiday-planner.vercel.app/hcc-holiday-planner-product-mockup.png">
   <meta name="twitter:card" content="summary_large_image">
+  <!-- Google Analytics (Half-Cup Calm) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X2W5NLF2ZF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-X2W5NLF2ZF');
+  </script>
 </head>
 <body>
 <div class="hcc-holiday-lp">
@@ -905,6 +913,26 @@
         bar.classList.toggle('is-visible', seen.size === 0 && pastHero);
       }, { passive: true });
     })();
+  </script>
+  <script>
+    // Analytics: "begin_checkout" when a buy button is clicked, "purchase" when Lemon Squeezy confirms.
+    var hccItem = { item_id: 'calm-mom-holiday-planner', item_name: 'The Calm Mom Holiday Planner', price: 9, quantity: 1 };
+    document.querySelectorAll('.lemonsqueezy-button').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        gtag('event', 'begin_checkout', { currency: 'USD', value: 9, items: [hccItem] });
+      });
+    });
+    window.addEventListener('load', function () {
+      if (!window.LemonSqueezy) return;
+      window.LemonSqueezy.Setup({
+        eventHandler: function (e) {
+          if (e && e.event === 'Checkout.Success') {
+            var order = (e.data && e.data.order && e.data.order.data) || {};
+            gtag('event', 'purchase', { transaction_id: String(order.id || Date.now()), currency: 'USD', value: 9, items: [hccItem] });
+          }
+        }
+      });
+    });
   </script>
   <script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
 </div>
