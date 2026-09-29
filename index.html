@@ -595,11 +595,27 @@
       .hcc-mobile-bar .hcc-button { padding: 5px 5px 5px 18px; }
       .hcc-mobile-bar .hcc-button-price { font-size: 20px; margin-left: 12px; padding: 6px 13px 8px; }
     }
+
+    /* Mobile hero: headline, product image and buy button above the fold, details after */
+    @media (max-width: 900px) {
+      .hcc-hero-grid { gap: 0; }
+      .hcc-hero-text { display: contents; }
+      .hcc-hero h1 { order: 1; }
+      .hcc-hero-visual { order: 2; margin: 6px 0 22px; }
+      .hcc-hero-caption { margin-top: 8px; }
+      .hcc-hero-actions { order: 3; margin-top: 0; position: relative; z-index: 1; }
+      .hcc-hero .hcc-usp { order: 4; margin: 28px 0 14px; }
+      .hcc-hero-copy { order: 5; }
+      .hcc-includes { order: 6; }
+    }
+    @media (max-width: 600px) {
+      .hcc-hero { padding-top: 22px; }
+    }
   </style>
 
   <section class="hcc-hero">
     <div class="hcc-wrap hcc-hero-grid">
-      <div>
+      <div class="hcc-hero-text">
         <h1>The Calm Mom <span class="hcc-accent">Holiday Planner</span></h1>
         <p class="hcc-usp">A holiday planner that helps you remember more — without giving you more to do.</p>
         <p class="hcc-hero-copy">Gifts, school theme days, work parties, three family Christmases — <strong>finally out of your head and in one place.</strong></p>
