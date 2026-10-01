@@ -57,7 +57,7 @@
           <a href="https://www.halfcupcalm.com/about/">about</a>
         </nav>
         </details>
-        <a class="hcc-header-cta lemonsqueezy-button" href="https://half-cup-calm.lemonsqueezy.com/checkout/buy/8b9f38ff-1b75-4b94-a8a6-e2c44cd98719?discount=0&embed=1">Get the Planner<span>$9</span></a>
+        <a class="hcc-header-cta hcc-checkout" href="https://half-cup-calm.lemonsqueezy.com/checkout/buy/8b9f38ff-1b75-4b94-a8a6-e2c44cd98719?logo=0&discount=0">Get the Planner<span>$9</span></a>
       </div>
     </div>
   </header>
@@ -596,20 +596,69 @@
       .hcc-mobile-bar .hcc-button-price { font-size: 20px; margin-left: 12px; padding: 6px 13px 8px; }
     }
 
-    /* Mobile hero: headline, product image and buy button above the fold, details after */
+    /* Mobile hero: headline, page count, value line and buy button above the fold; photo and details after.
+       Both columns are display:contents so every hero element is a grid item that `order` can place. */
     @media (max-width: 900px) {
       .hcc-hero-grid { gap: 0; }
-      .hcc-hero-text { display: contents; }
-      .hcc-hero h1 { order: 1; }
-      .hcc-hero-visual { order: 2; margin: 6px 0 22px; }
-      .hcc-hero-caption { margin-top: 8px; }
-      .hcc-hero-actions { order: 3; margin-top: 0; position: relative; z-index: 1; }
-      .hcc-hero .hcc-usp { order: 4; margin: 28px 0 14px; }
-      .hcc-hero-copy { order: 5; }
+      .hcc-hero-text, .hcc-hero-visual { display: contents; }
+      .hcc-hero h1 { order: 1; margin-bottom: 10px; }
+      /* the "40 printable pages" badge becomes a text line under the headline */
+      .hcc-badge { order: 2; position: static; display: block; width: auto; height: auto; margin: 0 0 12px; padding: 0;
+        border: 0; border-radius: 0; background: none; box-shadow: none; color: var(--hcc-olive-dark); place-items: normal;
+        text-align: left; font-size: 12px; letter-spacing: .14em; }
+      .hcc-badge span { display: inline; font: inherit; letter-spacing: inherit; margin: 0; }
+      .hcc-badge br { display: none; }
+      .hcc-hero .hcc-usp { display: none; }
+      .hcc-hero-copy { order: 3; }
+      .hcc-hero-actions { order: 4; margin-top: 18px; flex-direction: column; align-items: flex-start; gap: 8px; position: relative; z-index: 1; }
+      /* "One-time purchase, no subscription" on one small line under the button */
+      .hcc-microcopy { font-size: 12.5px; text-transform: lowercase; }
+      .hcc-microcopy strong { display: inline; font-weight: 400; color: inherit; text-transform: none; }
+      .hcc-microcopy strong::after { content: ", "; }
+      .hcc-hero-img { order: 5; display: block; width: auto; max-width: 100%; max-height: 220px; aspect-ratio: auto;
+        object-fit: contain; margin: 20px auto 0; }
+      .hcc-hero-caption { order: 5; }
+      .hcc-hero-visual .hcc-deco-a { display: none; }
       .hcc-includes { order: 6; }
     }
     @media (max-width: 600px) {
       .hcc-hero { padding-top: 22px; }
+      .hcc-hero-actions { align-items: stretch; }
+      .hcc-microcopy { text-align: center; }
+    }
+
+    /* Tablet portrait (iPad mini/Air/Pro 11, Pinterest's iPad traffic): a centered hero column with a bigger photo,
+       two- and three-column sections instead of the phone's single column, and the buy button kept in reach. */
+    @media (min-width: 601px) and (max-width: 900px) {
+      .hcc-hero-grid { width: min(100% - 80px, 660px); text-align: center; }
+      .hcc-hero h1 { margin-left: auto; margin-right: auto; }
+      .hcc-badge { text-align: center; }
+      .hcc-hero-copy { margin: 0 auto; max-width: 560px; }
+      .hcc-hero-actions { align-items: center; margin-top: 22px; }
+      .hcc-hero-img { max-height: 380px; margin-top: 30px; }
+      .hcc-includes { margin: 30px auto 0; width: 100%; text-align: left; }
+
+      .hcc-quote-visual { margin: 0 auto; }
+      .hcc-card-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .hcc-preview-grid, .hcc-steps { grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px; }
+      .hcc-preview-grid h3 { font-size: 21px; }
+      .hcc-step { padding: 22px; }
+      .hcc-step-num { position: static; display: block; font-size: 36px; margin-bottom: 8px; }
+      .hcc-step h3 { font-size: 22px; }
+
+      .hcc-header-cta { display: inline-flex; }
+      .hcc-mobile-bar {
+        display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: center;
+        position: fixed; z-index: 9997; left: 0; right: 0; bottom: 0;
+        padding: 12px 32px calc(12px + env(safe-area-inset-bottom));
+        background: rgba(255,255,255,.97); backdrop-filter: blur(12px);
+        border-top: 1px solid var(--hcc-line); box-shadow: 0 -10px 25px rgba(60,52,40,.08);
+        transform: translateY(110%); transition: transform .28s ease;
+      }
+      .hcc-mobile-bar.is-visible { transform: none; }
+      .hcc-mobile-title { font-size: 13px; color: var(--hcc-muted); line-height: 1.3; white-space: nowrap; }
+      .hcc-mobile-title strong { display: block; font-family: var(--hcc-serif); color: var(--hcc-ink); font-size: 18px; font-weight: 500; }
+      .hcc-holiday-lp { padding-bottom: 80px; }
     }
   </style>
 
@@ -620,7 +669,7 @@
         <p class="hcc-usp">A holiday planner that helps you remember more — without giving you more to do.</p>
         <p class="hcc-hero-copy">Gifts, school theme days, work parties, three family Christmases — <strong>finally out of your head and in one place.</strong></p>
         <div class="hcc-hero-actions">
-          <a class="hcc-button lemonsqueezy-button" href="https://half-cup-calm.lemonsqueezy.com/checkout/buy/8b9f38ff-1b75-4b94-a8a6-e2c44cd98719?discount=0&embed=1">Get the Holiday Planner<span class="hcc-button-price">$9</span></a>
+          <a class="hcc-button hcc-checkout" href="https://half-cup-calm.lemonsqueezy.com/checkout/buy/8b9f38ff-1b75-4b94-a8a6-e2c44cd98719?logo=0&discount=0">Get the Holiday Planner<span class="hcc-button-price">$9</span></a>
           <span class="hcc-microcopy"><strong>One-time purchase</strong>No subscription</span>
         </div>
         <div class="hcc-includes">
@@ -639,7 +688,7 @@
       <div class="hcc-hero-visual">
         <img class="hcc-deco hcc-deco-a" src="/hcc-sprig.svg" alt="" aria-hidden="true">
         <img class="hcc-hero-img" src="/hcc-holiday-planner-inside-1448.webp" srcset="/hcc-holiday-planner-inside-720.webp 720w, /hcc-holiday-planner-inside-1448.webp 1448w" sizes="(max-width: 900px) calc(100vw - 28px), 590px" alt="The Calm Mom Holiday Planner cover surrounded by printable planning pages" fetchpriority="high">
-        <div class="hcc-badge"><div><span>40</span>printable<br>pages</div></div>
+        <div class="hcc-badge"><div><span>40</span> printable<br> pages</div></div>
         <div class="hcc-hero-caption">Actual planner pages shown.</div>
       </div>
     </div>
@@ -761,21 +810,21 @@
 
       <div class="hcc-preview-grid">
         <article class="hcc-preview-card">
-          <img src="/hcc-holiday-planner-months-1448.webp" srcset="/hcc-holiday-planner-months-720.webp 720w, /hcc-holiday-planner-months-1448.webp 1448w" sizes="(max-width: 900px) calc(100vw - 28px), 370px" alt="October November and December checklist pages from The Calm Mom Holiday Planner" loading="lazy">
+          <img src="/hcc-holiday-planner-months-1448.webp" srcset="/hcc-holiday-planner-months-720.webp 720w, /hcc-holiday-planner-months-1448.webp 1448w" sizes="(max-width: 600px) calc(100vw - 28px), (max-width: 900px) 33vw, 370px" alt="October November and December checklist pages from The Calm Mom Holiday Planner" loading="lazy">
           <div class="hcc-preview-body">
             <h3>October → December, mapped out</h3>
             <p>Three month-by-month checklists help you spread the work out instead of letting every gift, event and errand pile into the final two weeks.</p>
           </div>
         </article>
         <article class="hcc-preview-card">
-          <img src="/hcc-holiday-planner-hero-1448.webp" srcset="/hcc-holiday-planner-hero-720.webp 720w, /hcc-holiday-planner-hero-1448.webp 1448w" sizes="(max-width: 900px) calc(100vw - 28px), 370px" alt="Gift list, grocery list, delegate list and hosting pages from The Calm Mom Holiday Planner" loading="lazy">
+          <img src="/hcc-holiday-planner-hero-1448.webp" srcset="/hcc-holiday-planner-hero-720.webp 720w, /hcc-holiday-planner-hero-1448.webp 1448w" sizes="(max-width: 600px) calc(100vw - 28px), (max-width: 900px) 33vw, 370px" alt="Gift list, grocery list, delegate list and hosting pages from The Calm Mom Holiday Planner" loading="lazy">
           <div class="hcc-preview-body">
             <h3>The useful stuff, not filler</h3>
             <p>Gift tracking, shopping, groceries, delegation and practical worksheets designed to be printed, written on and actually used.</p>
           </div>
         </article>
         <article class="hcc-preview-card">
-          <img src="/hcc-holiday-planner-gifts-1122.webp" srcset="/hcc-holiday-planner-gifts-720.webp 720w, /hcc-holiday-planner-gifts-1122.webp 1122w" sizes="(max-width: 900px) calc(100vw - 28px), 370px" alt="Master gift list and online orders tracker pages from The Calm Mom Holiday Planner" loading="lazy">
+          <img src="/hcc-holiday-planner-gifts-1122.webp" srcset="/hcc-holiday-planner-gifts-720.webp 720w, /hcc-holiday-planner-gifts-1122.webp 1122w" sizes="(max-width: 600px) calc(100vw - 28px), (max-width: 900px) 33vw, 370px" alt="Master gift list and online orders tracker pages from The Calm Mom Holiday Planner" loading="lazy">
           <div class="hcc-preview-body">
             <h3>Gifts + online orders</h3>
             <p>A master gift list for everyone and online-order trackers, so you know what was bought, what shipped and whether it ever actually arrived.</p>
@@ -800,7 +849,7 @@
       <div class="hcc-mid-cta">
         <h2>Ready to get Christmas out of your head?</h2>
         <p>40 printable pages · Instant digital download · $9 one-time purchase</p>
-        <a class="hcc-button lemonsqueezy-button" href="https://half-cup-calm.lemonsqueezy.com/checkout/buy/8b9f38ff-1b75-4b94-a8a6-e2c44cd98719?discount=0&embed=1">Get the Holiday Planner<span class="hcc-button-price">$9</span></a>
+        <a class="hcc-button hcc-checkout" href="https://half-cup-calm.lemonsqueezy.com/checkout/buy/8b9f38ff-1b75-4b94-a8a6-e2c44cd98719?logo=0&discount=0">Get the Holiday Planner<span class="hcc-button-price">$9</span></a>
       </div>
     </div>
   </section>
@@ -901,7 +950,7 @@
         <div class="hcc-eyebrow">A little less mental load</div>
         <h2>Put Christmas somewhere other than your head.</h2>
         <p>One realistic printable system for the gifts, logistics, school chaos, family plans and tiny holiday tasks you're already keeping track of.</p>
-        <a class="hcc-button lemonsqueezy-button" href="https://half-cup-calm.lemonsqueezy.com/checkout/buy/8b9f38ff-1b75-4b94-a8a6-e2c44cd98719?discount=0&embed=1">Get The Calm Mom Holiday Planner<span class="hcc-button-price">$9</span></a>
+        <a class="hcc-button hcc-checkout" href="https://half-cup-calm.lemonsqueezy.com/checkout/buy/8b9f38ff-1b75-4b94-a8a6-e2c44cd98719?logo=0&discount=0">Get The Calm Mom Holiday Planner<span class="hcc-button-price">$9</span></a>
         <div class="hcc-legal">$9 one-time purchase • Instant PDF download • No subscription</div>
       </div>
     </div>
@@ -909,7 +958,7 @@
 
   <div class="hcc-mobile-bar">
     <div class="hcc-mobile-title"><strong>Holiday Planner</strong>One-time purchase</div>
-    <a class="hcc-button lemonsqueezy-button" href="https://half-cup-calm.lemonsqueezy.com/checkout/buy/8b9f38ff-1b75-4b94-a8a6-e2c44cd98719?discount=0&embed=1">Get the Planner<span class="hcc-button-price">$9</span></a>
+    <a class="hcc-button hcc-checkout" href="https://half-cup-calm.lemonsqueezy.com/checkout/buy/8b9f38ff-1b75-4b94-a8a6-e2c44cd98719?logo=0&discount=0">Get the Planner<span class="hcc-button-price">$9</span></a>
   </div>
 
   <script>
@@ -931,26 +980,15 @@
     })();
   </script>
   <script>
-    // Analytics: "begin_checkout" when a buy button is clicked, "purchase" when Lemon Squeezy confirms.
+    // Analytics: "begin_checkout" when a buy button is clicked. Checkout opens on Lemon Squeezy's own page,
+    // so beacon transport lets the event send while the browser navigates away.
     var hccItem = { item_id: 'calm-mom-holiday-planner', item_name: 'The Calm Mom Holiday Planner', price: 9, quantity: 1 };
-    document.querySelectorAll('.lemonsqueezy-button').forEach(function (btn) {
+    document.querySelectorAll('.hcc-checkout').forEach(function (btn) {
       btn.addEventListener('click', function () {
-        gtag('event', 'begin_checkout', { currency: 'USD', value: 9, items: [hccItem] });
-      });
-    });
-    window.addEventListener('load', function () {
-      if (!window.LemonSqueezy) return;
-      window.LemonSqueezy.Setup({
-        eventHandler: function (e) {
-          if (e && e.event === 'Checkout.Success') {
-            var order = (e.data && e.data.order && e.data.order.data) || {};
-            gtag('event', 'purchase', { transaction_id: String(order.id || Date.now()), currency: 'USD', value: 9, items: [hccItem] });
-          }
-        }
+        gtag('event', 'begin_checkout', { currency: 'USD', value: 9, items: [hccItem], transport_type: 'beacon' });
       });
     });
   </script>
-  <script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
 </div>
 
 </body>
