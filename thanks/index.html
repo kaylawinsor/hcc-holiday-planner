@@ -294,8 +294,7 @@
     .ty-lead strong { color: var(--hcc-ink); }
     .ty-visual { position: relative; }
     .ty-visual img { border-radius: 22px; box-shadow: var(--hcc-shadow); background: #ece7df; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
-    .ty-visual .hcc-deco { width: 150px; left: -70px; bottom: -36px; transform: rotate(-8deg); opacity: .9; }
-    .ty-section { padding: 0 0 80px; }
+    .ty-section { padding: 56px 0 80px; }
     .ty-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
     .ty-card { background: #fff; border: 1px solid var(--hcc-line); border-radius: 20px; padding: 28px; box-shadow: 0 8px 24px rgba(60,52,40,.05); }
     .ty-card .k { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--hcc-berry); }
@@ -322,15 +321,14 @@
 
     .ty-download { margin-top: 26px; }
     .ty-download .hcc-button { font-size: 17px; }
-    .ty-fine { margin: 12px 0 0; font-size: 14px; color: var(--hcc-muted); max-width: 520px; }
+    .hcc-holiday-lp .ty-fine { margin: 20px 0 0; font-size: 14px; color: var(--hcc-muted); max-width: 520px; }
     /* tablet portrait: one centered column, cards in two rows */
     @media (max-width: 900px) {
       .ty-hero { padding: 48px 0 56px; }
       .ty-grid { grid-template-columns: 1fr; gap: 36px; text-align: center; width: min(100% - 80px, 660px); }
       .ty-lead { margin: 0 auto; }
-      .ty-fine { margin-left: auto; margin-right: auto; }
+      .hcc-holiday-lp .ty-fine { margin-left: auto; margin-right: auto; }
       .ty-visual { max-width: 520px; margin: 0 auto; width: 100%; }
-      .ty-visual .hcc-deco { display: none; }
       .ty-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .ty-cards .ty-card:first-child { grid-column: 1 / -1; }
     }
@@ -338,11 +336,11 @@
       .ty-hero { padding: 30px 0 40px; }
       .ty-grid { width: calc(100% - 28px); gap: 26px; text-align: left; }
       .ty-lead { font-size: 17px; margin: 0; }
-      .ty-fine { margin-left: 0; }
+      .hcc-holiday-lp .ty-fine { margin-left: 0; }
       .ty-download .hcc-button { width: 100%; }
       .ty-visual { max-width: none; }
       .ty-visual img { max-height: 230px; }
-      .ty-section { padding-bottom: 56px; }
+      .ty-section { padding-top: 36px; padding-bottom: 56px; }
       .ty-cards, .ty-links { grid-template-columns: 1fr; }
       .ty-card { padding: 22px; }
       .ty-next { padding: 56px 0; }
@@ -362,7 +360,6 @@
           </div>
         </div>
         <div class="ty-visual">
-          <img class="hcc-deco" src="/hcc-sprig.svg" alt="" aria-hidden="true">
           <img src="/hcc-holiday-planner-product-mockup-1448.webp" srcset="/hcc-holiday-planner-product-mockup-720.webp 720w, /hcc-holiday-planner-product-mockup-1448.webp 1448w" sizes="(max-width: 600px) calc(100vw - 28px), (max-width: 900px) 520px, 480px" alt="The Calm Mom Holiday Planner cover and printable pages" width="1448" height="1086">
         </div>
       </div>
