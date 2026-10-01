@@ -9,7 +9,7 @@ Upload `index.html`, the `assets` folder, and this `README.md` to the root of th
 Import the GitHub repository into Vercel and use the `Other` framework preset. No build command is required.
 
 ## Checkout
-All buy buttons (class `hcc-checkout`) link straight to the Lemon Squeezy checkout page (`?logo=0`; the discount field is shown so promo codes work). The `lemon.js` overlay was removed 2026-10-01 because it was slow to load. Clicks fire GA4 `begin_checkout`; completed purchases are tracked on `/thanks/` (below); Lemon Squeezy is the source of truth for sales.
+All buy buttons (class `hcc-checkout`) link straight to the Lemon Squeezy checkout page (`?logo=0&discount=0`; the discount field is hidden). The `lemon.js` overlay was removed 2026-10-01 because it was slow to load. Clicks fire GA4 `begin_checkout`; completed purchases are tracked on `/thanks/` (below); Lemon Squeezy is the source of truth for sales.
 
 Suggested custom domain: `planner.halfcupcalm.com`
 
